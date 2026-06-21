@@ -1,0 +1,35 @@
+# Sevilla på norsk – robots.txt
+# Tillater alle vanlige søkemotorer
+
+User-agent: *
+Allow: /
+
+# ============================================
+# AI-søkemotorer / GEO (Generative Engine Optimization)
+# Eksplisitt tillatelse, slik at siden kan siteres
+# av ChatGPT, Claude, Perplexity og Google AI Overviews/Gemini
+# ============================================
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ============================================
+# Sitemap – legg til denne linjen når domenet er klart
+# og sitemap.xml er generert:
+# Sitemap: https://www.DITTDOMENE.com/sitemap.xml
+# ============================================
