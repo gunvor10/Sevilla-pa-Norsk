@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #4A3B32;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,7 +107,18 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Sevilla ble grunnlagt for over 3000 år siden og er en av Europas eldste byer, formet av romere, maurere og kristne. Jeg har bodd i Sevilla i over 30 år, og jeg blir fremdeles overrasket. Her er historien om denne enestående byen, slik jeg har lært den å kjenne.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">En by eldre enn Roma</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#en-by-eldre-enn-roma">En by eldre enn Roma</a></li>
+        <li><a href="#al-andalus-da-sevilla-var-en-av-verdens-">Al-Andalus – da Sevilla var en av verdens største byer</a></li>
+        <li><a href="#alcazar-og-giralda-arven-de-ikke-klarte-">Alcázar og Giralda – arven de ikke klarte å slette</a></li>
+        <li><a href="#1492-aret-som-forandret-verden-fra-sevil">1492 – året som forandret verden fra Sevilla</a></li>
+        <li><a href="#sevilla-i-dag-fortiden-en-del-av-fremtid">Sevilla i dag – fortiden en del av fremtiden</a></li>
+      </ol>
+    </div>
+
+    <h2 id="en-by-eldre-enn-roma" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">En by eldre enn Roma</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">De fleste vet at Sevilla er gammel. Få vet <em>hvor</em> gammel. Ifølge legenden ble byen grunnlagt av Hercules selv – og selv om historikerne er litt mer nøkterne, vet vi at stedet har vært bebodd i over tre tusen år. Fønikere, romere, vestgoter – alle satte sine spor her før araberne kom og forvandlet alt.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Romerne kalte den <em>Hispalis</em> og gjorde den til en viktig havn ved Guadalquivir-elven. Spor etter dem finnes overalt i byen – marmorkolonnene på Alameda de Hércules, mosaikker under moderne bygårder, og like utenfor byen ligger Itálica, en av Romerrikets best bevarte byer med et imponerende amfiteater.</p>
 
@@ -83,11 +129,11 @@
       <figcaption style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15.5px; color: #9A7B54; margin-top: 10px; text-align: center;">Metropol Parasol – Sevillas moderne lag, reist over romerske ruiner.</figcaption>
     </figure>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Al-Andalus – da Sevilla var en av verdens største byer</h2>
+    <h2 id="al-andalus-da-sevilla-var-en-av-verdens-" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Al-Andalus – da Sevilla var en av verdens største byer</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">I år 711 krysset berberne fra Nord-Afrika Gibraltarstredet og erobret den iberiske halvøy på rekordtid. Under maurisk styre – perioden vi kjenner som <em>Al-Andalus</em> – ble Sevilla til <em>Isbiliya</em>, en storby der muslimer, kristne og jøder levde side om side.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Filosofi, matematikk, astronomi, arkitektur og medisin blomstret her mens resten av Europa levde i det vi kaller Mørketiden. Biblioteker med hundre tusen bøker. Offentlige bad. Gatebelysning. Det var en annen verden.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Alcázar og Giralda – arven de ikke klarte å slette</h2>
+    <h2 id="alcazar-og-giralda-arven-de-ikke-klarte-" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Alcázar og Giralda – arven de ikke klarte å slette</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Da de kristne kongene gjenerobret Sevilla i 1248 under Fernando III, sto de overfor et dilemma som er ganske menneskelig: det mauriske Sevilla var for vakkert til å rives. I stedet for å ødelegge det maurerne hadde bygget, bygde de <em>videre på det</em> – med mauriske håndverkere, mauriske materialer og maurisk stil.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Giralda-tårnet ble opprinnelig bygget som minarett til den store moskeen i 1184. Da de kristne overtok, la de ganske enkelt et klokketårn på toppen og kalte det en katedral. I dag er det et av Europas mest fotograferte tårn.</p>
 
@@ -98,11 +144,11 @@
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Giralda er opprinnelig et islamsk minarett. Det er kanskje det vakreste eksempelet på hvordan Sevilla alltid har visst å ta det beste fra alle kulturer og gjøre det til sitt eget.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">1492 – året som forandret verden fra Sevilla</h2>
+    <h2 id="1492-aret-som-forandret-verden-fra-sevil" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">1492 – året som forandret verden fra Sevilla</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Det var her Columbus returnerte etter å ha oppdaget Amerika. Det var Sevilla – ikke Madrid, ikke Lisboa – som i nesten to hundre år var verdens rikeste og travleste havn. Silke, krydder, sølv og gull passerte gjennom Sevillas havn.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Katedralen – som allerede var under bygging – ble ferdigstilt som verdens største, nettopp fordi man ville vise verden hva Sevilla var blitt.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevilla i dag – fortiden en del av fremtiden</h2>
+    <h2 id="sevilla-i-dag-fortiden-en-del-av-fremtid" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevilla i dag – fortiden en del av fremtiden</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">I dag er Sevilla Andalucias hovedstad og Spanias fjerde største by. Semana Santa og Feria de Abril trekker millioner av besøkende hvert år. Tapas-kulturen her er en egen verden – noe du opplever kropp og sjel når du går fra bar til bar en senvarm fredagskveld i Triana.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Turistene er her. Hotellene er her. Men sevillianerne lever sitt liv nesten uforstyrret ved siden av det hele. Det er det Sevilla-livet jeg prøver å vise frem – ikke postkortbildene, men det levende, støyende, duftende hverdagslivet i en by som er blitt mitt hjem.</p>
 
@@ -151,7 +197,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>

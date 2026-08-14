@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #4A3B32;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,7 +107,19 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Triana er bydelen på vestsiden av elven Guadalquivir i Sevilla, kjent for keramikk, flamenco og en sterk egen identitet. Triana har lenge vært en stor ukjent for meg – den delen av Sevilla som jeg i altfor mange år ikke ga den oppmerksomheten den fortjener. Det angrer jeg på nå.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">På den andre siden av broen</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#pa-den-andre-siden-av-broen">På den andre siden av broen</a></li>
+        <li><a href="#carmen-da-triana-ble-verdensber-mt">Carmen – da Triana ble verdensberømt</a></li>
+        <li><a href="#torre-de-san-jorge-der-inkvisisjonen-hol">Torre de San Jorge – der inkvisisjonen holdt til i nesten 400 år</a></li>
+        <li><a href="#keramikkens-bydel">Keramikkens bydel</a></li>
+        <li><a href="#santa-ana-katedralen-som-kom-f-r-katedra">Santa Ana – katedralen som kom før katedralen</a></li>
+        <li><a href="#mercado-de-triana-bydelens-nye-hjerte">Mercado de Triana – bydelens nye hjerte</a></li>
+      </ol>
+    </div>
+
+    <h2 id="pa-den-andre-siden-av-broen" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">På den andre siden av broen</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Triana ligger på den andre siden av Guadalquivir-elven, forbundet med resten av Sevilla via broer – og den geografiske separasjonen har alltid gitt bydelen sin egen identitet. Triana var <em>extramuros</em> – utenfor bymurene – og det var nettopp det som definerte hva slags folk som bodde her. Fiskere, keramikere, sjøfolk, flamenco-musikere. Og romfolket – gitanene – som gjorde Triana til et av flamencokulturens aller viktigste hjemsteder.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">De som bor her kaller seg stolt <strong>trianeros</strong> – ikke sevillanos. Identiteten tilhører bydelen, ikke byen. Og det sier alt om hva slags sted Triana er.</p>
 
@@ -83,23 +130,23 @@
       <figcaption style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15.5px; color: #9A7B54; margin-top: 10px; text-align: center;">Calle Betis mot Mercado de Triana – en av mine favorittgater i hele Sevilla.</figcaption>
     </figure>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Carmen – da Triana ble verdensberømt</h2>
+    <h2 id="carmen-da-triana-ble-verdensber-mt" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Carmen – da Triana ble verdensberømt</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Selv de som aldri har satt foten i Triana kjenner til en av bydelens mest berømte innbyggere: Carmen. Protagonisten i Georges Bizets opera fra 1875 er ifølge historien fra Triana – en ung sigøynerkvinne, frilynt og livsglad, som jobber på sigarfabrikken og lever livet fullt og helt på egne premisser. Når du går gjennom Trianas gater og hører flamenco-rytmer fra en bar, kjenner du at Carmen ikke er helt oppdiktet likevel.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Torre de San Jorge – der inkvisisjonen holdt til i nesten 400 år</h2>
+    <h2 id="torre-de-san-jorge-der-inkvisisjonen-hol" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Torre de San Jorge – der inkvisisjonen holdt til i nesten 400 år</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Her kommer den mørke siden av Trianas historie. Torre de San Jorge, det gamle Castillo de San Jorge, var hovedsetet for den spanske inkvisisjonen i Sevilla i nesten 400 år. Fra dette tårnet ble tusenvis av mennesker avhørt, fengslet og i mange tilfeller henrettet.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">I dag er det et museum på stedet, og det er et av de mest rystende og viktigste stedene å besøke i Sevilla. Ikke fordi det er vakkert – men fordi det minner deg om at denne vakre byen også bærer på en tung og komplisert historie.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Torre de San Jorge var i nesten 400 år inkvisisjonens hjerte i Sevilla. Det minner deg på at skjønnhet og grusomhet kan eksistere side om side – i samme by, i samme bydel, i samme gate.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Keramikkens bydel</h2>
+    <h2 id="keramikkens-bydel" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Keramikkens bydel</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Men Triana er også noe mye mer lystig: det var Sevillas keramikk-hjerte. Her holdt håndverkerne til – alfarerne – som produserte de berømte azulejosene som i dag pryder vegger og gulv over hele verden. Keramikken ble ikke bare brukt lokalt, den ble eksportert til hele verden – til Latin-Amerika, til Europa, til kongelige palasser og store katedraler.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">I dag kan du fremdeles finne håndverksbutikker og verksteder i Triana der tradisjonen holdes i live – med de samme teknikkene og de samme mønstrene som har kjennetegnet Triana-keramikken i hundrevis av år.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Santa Ana – katedralen som kom før katedralen</h2>
+    <h2 id="santa-ana-katedralen-som-kom-f-r-katedra" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Santa Ana – katedralen som kom før katedralen</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Iglesia de Santa Ana kalles <em>Katedralen i Triana</em>, og det er ikke bare et kallenavn. Santa Ana er Sevillas eldste kirke, bygget i 1266 etter ordre fra kong Alfonso X el Sabio – lenge før selve Katedralen i sentrum begynte å ta form. Det er noe rørende ved å stå inne i Santa Ana og tenke på det: Sevillas eldste kirke befinner seg rolig og litt oversett i Triana – akkurat som bydelen selv.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Mercado de Triana – bydelens nye hjerte</h2>
+    <h2 id="mercado-de-triana-bydelens-nye-hjerte" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Mercado de Triana – bydelens nye hjerte</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Hvis ett sted oppsummerer hva Triana er i dag, er det <strong>Mercado de Triana</strong> – regionens største kulinariske attraksjon. Inne i markedet finner du små matkiosker, tradisjonelle boder med fersk frukt, kjøtt og fisk, en <strong>kokkeskole</strong> der du kan lære å lage andalusisk mat, og et <strong>lite teater</strong> for kulturelle arrangementer.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Mercado de Triana er ikke bare et marked. Det er et levende kultursentrum midt i bydelen.</p>
 
@@ -148,7 +195,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>

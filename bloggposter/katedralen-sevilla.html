@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #4A3B32;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,7 +107,17 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Katedralen i Sevilla er verdens største gotiske katedral og en av byens mest besøkte severdigheter. Jeg er ikke religiøs. Det er kanskje ikke det første man forventer å høre fra noen som har guidet hundrevis av mennesker gjennom en av verdens vakreste katedraler. Men det er nettopp der historien min begynner.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Den dagen jeg så katedralen for første gang – på ordentlig</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#den-dagen-jeg-sa-katedralen-for-f-rste-g">Den dagen jeg så katedralen for første gang – på ordentlig</a></li>
+        <li><a href="#verdens-st-rste-gotiske-katedral-og-hva-">Verdens største gotiske katedral – og hva det faktisk betyr</a></li>
+        <li><a href="#ikke-bare-for-turister-katedralen-lever">Ikke bare for turister – katedralen lever</a></li>
+        <li><a href="#det-jeg-alltid-forteller-gruppene-mine">Det jeg alltid forteller gruppene mine</a></li>
+      </ol>
+    </div>
+
+    <h2 id="den-dagen-jeg-sa-katedralen-for-f-rste-g" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Den dagen jeg så katedralen for første gang – på ordentlig</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Jeg hadde selvsagt vært inne i katedralen før. Man bor ikke i Sevilla i årevis uten å sette foten innenfor den. Men den dagen jeg gikk inn for å begynne å studere den som lisensiert guide – det var noe annet. Det var som å se den for aller første gang.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Jeg husker det veldig godt. Jeg gikk inn gjennom en av de store portene, og så stanset jeg. Bare stanset. Det enorme rommet åpnet seg foran meg – den svimmelhetsfremkallende høyden, det dempede lyset som filtrerte inn gjennom de gotiske vinduene, duftene, lydene, stillheten midt i det hele. Og jeg tenkte: <em>hvor i all verden begynner jeg?</em></p>
 
@@ -83,20 +128,20 @@
       <figcaption style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15.5px; color: #9A7B54; margin-top: 10px; text-align: center;">Alcázar ligger vegg i vegg – kombinasjonsbilletten er alltid verdt det.</figcaption>
     </figure>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Verdens største gotiske katedral – og hva det faktisk betyr</h2>
+    <h2 id="verdens-st-rste-gotiske-katedral-og-hva-" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Verdens største gotiske katedral – og hva det faktisk betyr</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Katedralen i Sevilla er ikke bare stor. Den er den største gotiske katedralen i verden og den tredje største kirken totalt – etter Peterskirken i Roma og St. Paul's i London. Men det er ikke størrelsen som imponerer mest når man først er inne. Det er detaljene. Hvert eneste kapell er et kunstverk i seg selv. Maleriene av Murillo og Zurbarán. Giralda-tårnet som stiger opp fra det som en gang var en islamsk minarett. Graven til Kristoffer Columbus, båret av fire konger.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">I 1401 ble det bestemt at de skulle bygge katedralen – på ruinene av den store almohade-moskeen. Byggingen startet i 1436, og tok over hundre år å fullføre. Legenden sier at kannikene sa til hverandre: <em>«La oss bygge en kirke så stor at de som ser den ferdig vil tro vi var gale.»</em> De var ikke gale. De hadde rett.</p>
 
     <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0 0 14px; color: #35281F;">Giralda – tårnet med to liv</h3>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Giralda-tårnet er en av mine favorittsteder å snakke om når jeg guider. Det ble bygget som minarett i 1184 av de mauriske almohade-herskerne – og er et av de vakreste eksemplene på islamsk arkitektur i Spania. Da de kristne overtok Sevilla i 1248, bestemte de seg for å beholde det. I stedet for trapper har det ramper inne – slik at muezinen kunne ri opp på hesteryggen for å kalle til bønn. Senere la de til et renessansetårn på toppen med kirkeklokker. To religioner, ett tårn, åtte hundre år med historie.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Ikke bare for turister – katedralen lever</h2>
+    <h2 id="ikke-bare-for-turister-katedralen-lever" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Ikke bare for turister – katedralen lever</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Det som gjør Katedralen i Sevilla til noe mer enn et museum er at den fremdeles er i full bruk. Messe holdes daglig i sidekapellene. Sevillianere kommer inn ikke som turister, men som en naturlig del av hverdagen sin – for å tenne et lys, sitte stille et øyeblikk, eller delta i en av de mange festlighetene som er knyttet til katedralen gjennom kirkeåret.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Under Semana Santa er katedralen selve hjertet av det hele. Prosesjonene starter og slutter her. Byen samles. Og selv om jeg ikke er religiøs, kan jeg ikke unngå å kjenne på noe når jeg står der i mengden og ser den første prosesjonsfiguren runde hjørnet i mørket – med levende lys og den tunge lyden av trommer i gatene.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Katedralen er ikke et museum du besøker og forlater. Den er en levende del av Sevilla – åpen for alle, hele året, akkurat slik den har vært i over seks hundre år.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Det jeg alltid forteller gruppene mine</h2>
+    <h2 id="det-jeg-alltid-forteller-gruppene-mine" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Det jeg alltid forteller gruppene mine</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Jeg har guidet i Sevilla i rundt fem år, og katedralen er alltid et høydepunkt. En omvisning her tar gjerne en time. Jeg starter alltid med å be folk gjøre én ting: stopp opp i inngangen og se opp. La størrelsen synke inn. Fordi det er der magien begynner – i det øyeblikket du innser at menneskehender faktisk klarte å bygge dette, uten moderne teknologi, stein for stein gjennom generasjoner.</p>
 
     <figure style="margin: 0 0 40px;">
@@ -145,7 +190,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>

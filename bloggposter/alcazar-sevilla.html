@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #4A3B32;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,7 +107,18 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Alcázar i Sevilla er et kongelig palass og UNESCO-verdensarv, og den eldste kongelige residensen som fortsatt er i bruk i Europa. Reales Alcázares er som å komme rett inn i en eventyrfortelling. Så full av legender, palasser og historisk drama at det er vanskelig å forestille seg at alt dette faktisk skjedde — her, bak disse murene, i denne byen som er blitt mitt hjem.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevillas eldste fundament</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#sevillas-eldste-fundament">Sevillas eldste fundament</a></li>
+        <li><a href="#intriger-elskerinner-og-arabisk-poesi">Intriger, elskerinner og arabisk poesi</a></li>
+        <li><a href="#da-jeg-gikk-fra-rom-til-rom-og-ble-fulls">Da jeg gikk fra rom til rom – og ble fullstendig blendet</a></li>
+        <li><a href="#hagene-en-oase-du-gjerne-kan-tilbringe-e">Hagene – en oase du gjerne kan tilbringe en hel formiddag i</a></li>
+        <li><a href="#et-levende-kongelig-residens">Et levende kongelig residens</a></li>
+      </ol>
+    </div>
+
+    <h2 id="sevillas-eldste-fundament" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevillas eldste fundament</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Det som fascinerer meg mest med Alcázar er ikke det du ser — selv om det du ser er overveldende vakkert. Det er det du ikke ser: alt som ligger under. Historien til dette stedet strekker seg lenger tilbake enn de fleste aner. Fenikierne var her. Romerne var her. Vestgoterne bygde videre. Og de mauriske herskerne skapte til slutt noe så usedvanlig vakkert at de kristne kongene, da de overtok Sevilla i 1248, rett og slett ikke klarte å rive det ned.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Alcázar er ikke bare ett byggverk – det er lag på lag med sivilisasjoner, stablet oppå hverandre gjennom to tusen år. Det er selve fundamentet i Sevillas fortid. Og det er nettopp det som gjør det så ubeskrivelig rikt å utforske.</p>
 
@@ -83,21 +129,21 @@
       <figcaption style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15.5px; color: #9A7B54; margin-top: 10px; text-align: center;">Mauriske hesteskobuer og azulejos – en naturlig avstikker etter Alcázar.</figcaption>
     </figure>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Intriger, elskerinner og arabisk poesi</h2>
+    <h2 id="intriger-elskerinner-og-arabisk-poesi" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Intriger, elskerinner og arabisk poesi</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Historien til Alcázar er full av det som gjør historien menneskelig – ikke bare kriger og datoer, men kjærlighet, sjalusi, forræderi og makt. Kong Pedro I av Kastilia – kjent som Pedro el Cruel av fiendene og Pedro el Justo av vennene – bygde den vakreste delen av palasset på 1300-tallet. Han hentet mauriske håndverkere fra Granada og foreskrev en stil vi kaller mudéjar: en unik blanding av islamsk og kristen arkitektur som finnes i sin vakreste form nettopp her.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Pedro hadde en fascinasjon for den mauriske kulturen som gikk langt dypere enn arkitekturen. Han omgav seg med arabisktalende rådgivere, hadde diplomatiske forbindelser med sultanen i Granada – og veggene i palasset hans er dekket av arabisk kalligrafi og poesi, innmeislet i gips og keramikk med en presisjon som tar pusten fra meg hver eneste gang jeg ser det.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Og så er det historiene bak murene – de kongelige brødrenes intriger, maktkampene, de hemmelige passasjene. Alcázar er ikke et museum som forteller deg om fortiden. Det <em>er</em> fortiden, og den lever i hvert eneste rom.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Da jeg gikk fra rom til rom – og ble fullstendig blendet</h2>
+    <h2 id="da-jeg-gikk-fra-rom-til-rom-og-ble-fulls" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Da jeg gikk fra rom til rom – og ble fullstendig blendet</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Jeg husker veldig godt da jeg utforsket Alcázar for å lære det å kjenne som guide. Jeg gikk fra rom til rom, og ble rett og slett blendet. Ikke bare av størrelsen eller overdådigheten – men av detaljene. De fantastiske flisene – azulejosene – som dekker nedre del av veggene i så mange av rommene. Hvert enkelt mønster geometrisk presist, hvert enkelt fargevalg gjennomtenkt. Og så den arabiske skriften som løper langs veggene som en uendelig sang – vers fra Koranen, hyllester til kongen, ønsker om velsignelse – alt risset inn i gips av håndverkere for sju hundre år siden.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Jeg gikk fra rom til rom og ble blendet. Ikke av gull eller rikdom – men av den stille perfeksjonen i hvert eneste flisemønster, hvert eneste arabiske vers på veggen.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Hagene – en oase du gjerne kan tilbringe en hel formiddag i</h2>
+    <h2 id="hagene-en-oase-du-gjerne-kan-tilbringe-e" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Hagene – en oase du gjerne kan tilbringe en hel formiddag i</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Hvis palasset er eventyret, er hagene drømmen inni eventyret. De strekker seg over et enormt område bak palassbygningene – med fontener, kanaler, sitrustrær, myrter og roser som skaper en avslappende atmosfære som er nesten magisk på en varm sommerdag.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Det er her du finner to av mine absolutte favorittdetaljer i hele Alcázar. For det første de vakre påfuglene som går fritt rundt i hagene – som om de alltid har hørt hjemme her, og kanskje gjør de det. For det andre: det vanndrevne orgelet. Det er svært få av dem i Europa, og Alcázar har ett. Et instrument drevet av vannkraft, som spiller av seg selv – en teknologisk nysgjerrighet fra hundrevis av år tilbake som fremdeles fungerer og fremdeles overrasker besøkende.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Et levende kongelig residens</h2>
+    <h2 id="et-levende-kongelig-residens" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Et levende kongelig residens</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">En detalj som overrasker mange: Alcázar er fremdeles i offisiell bruk av den spanske kongefamilien. Når kongen og dronningen besøker Sevilla, bor de her. Det gjør Alcázar til den eldste kongelige residensen som fremdeles er i aktiv bruk i Europa. Det er ikke et museum man har satt glass rundt – det er et levende sted med drøyt to tusen år med ubrutt historie.</p>
 
     <figure style="margin: 0 0 40px;">
@@ -146,7 +192,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>

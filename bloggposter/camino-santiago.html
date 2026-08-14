@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #4A3B32;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,16 +107,27 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Camino de Santiago er pilgrimsleden til Santiago de Compostela, og jeg har ledet grupper på både den franske og portugisiske ruten over 15 ganger. Det er ikke bare en vandring. Det er en reise inn i deg selv.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Min første Camino – en gave fra hjertet</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#min-f-rste-camino-en-gave-fra-hjertet">Min første Camino – en gave fra hjertet</a></li>
+        <li><a href="#fra-en-camino-til-femten-og-mer-til">Fra én Camino til femten – og mer til</a></li>
+        <li><a href="#den-franske-og-den-portugisiske-ruten">Den franske og den portugisiske ruten</a></li>
+        <li><a href="#hvilken-rute-liker-jeg-best">Hvilken rute liker jeg best?</a></li>
+        <li><a href="#en-mer-spirituell-camino-dagens-ord">En mer spirituell Camino – dagens ord</a></li>
+      </ol>
+    </div>
+
+    <h2 id="min-f-rste-camino-en-gave-fra-hjertet" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Min første Camino – en gave fra hjertet</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Det startet egentlig ikke med meg. Min første Camino gikk jeg for min onkel og hans vennegjeng. Vi begynte fra León, med støttebuss langs veien – en løsning som gjør Camino tilgjengelig for de som ikke kan gå hele strekningen til fots. Jeg var guide, koordinator og heiagjeng på én gang.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Jeg ante ikke hva som ventet meg. Fra det øyeblikket jeg satte foten på Caminoen for første gang, var jeg <em>perdidamente enamorada</em> – hodeløst forelsket.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Fra det øyeblikket jeg satte foten på Caminoen for første gang, visste jeg at jeg ville komme tilbake. Og tilbake. Og tilbake igjen.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Fra én Camino til femten – og mer til</h2>
+    <h2 id="fra-en-camino-til-femten-og-mer-til" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Fra én Camino til femten – og mer til</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Etter den første turen begynte forespørslene å komme. Norske reisebyråer, svenske operatører, australske grupper – og nå i sommer også et amerikansk selskap – har alle ønsket Gunvor som guide og tilrettelegger på Camino. Noen vil gå fort. Noen vil gå sakte. Noen vil gå i stillhet. Alle finner det de leter etter.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Den franske og den portugisiske ruten</h2>
+    <h2 id="den-franske-og-den-portugisiske-ruten" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Den franske og den portugisiske ruten</h2>
     <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0 0 14px; color: #35281F;">Camino Francés – den klassiske</h3>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Med grupper starter vi vanligvis i <strong>Sarria</strong> – det siste startpunktet som gir deg den offisielle Compostela-pilgrimsattesten, perfekt for et intenst og meningsfylt <strong>5-dagers program</strong>. De siste 115 kilometerne inn mot Santiago er de vakreste. Den franske ruten er den mest kjente og mest vandrede – og etter min mening den vakreste av alle rutene.</p>
     <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; margin: 0 0 14px; color: #35281F;">Camino Portugués – den rolige</h3>
@@ -103,12 +149,12 @@
       </ul>
     </div>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Hvilken rute liker jeg best?</h2>
+    <h2 id="hvilken-rute-liker-jeg-best" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Hvilken rute liker jeg best?</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Hvis du spør meg ærlig, er det vanskelig å velge. Jeg har nettopp gått den portugisiske ruten igjen, og den var helt flott. Den franske har bredden – den enorme variasjonen i landskap, de mange nasjonalitetene du møter. Den portugisiske har sin egen ro og nærhet. Begge er like fine på sin måte. Men uansett hvilken vei du velger – følelsen når du ankommer Santiago er den samme. Hver gang. Uten unntak.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Uansett hvilken vei du velger – følelsen når du ankommer katedralen i Santiago er den samme. Tårene kommer av seg selv. Hver gang. Uten unntak.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">En mer spirituell Camino – dagens ord</h2>
+    <h2 id="en-mer-spirituell-camino-dagens-ord" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">En mer spirituell Camino – dagens ord</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">De siste årene har jeg ønsket å gi Camino en dypere dimensjon for gruppene mine. Jeg bruker syv ord fra pilegrimsleden – stillhet, langsomhet, spiritualitet, deling, frihet, enkelhet og ro. Hver morgen, før vi begynner å gå, velger vi et av dem – kanskje <em>stillhet</em>, kanskje <em>deling</em>, kanskje <em>langsomhet</em>. Vi bærer dette ordet med oss gjennom dagens etappe.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Om kvelden, over middag, deler vi hva ordet betød for oss den dagen. De samtalene, de historiene, den åpenheten mellom mennesker som knapt kjente hverandre for noen dager siden – det er det vakreste jeg vet om.</p>
 
@@ -147,7 +193,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>

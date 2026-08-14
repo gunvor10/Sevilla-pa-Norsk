@@ -23,12 +23,18 @@
   body { background: #FBF5EB; color: #3B2F27; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
   a { color: #D9631A; text-decoration: none; }
   a:hover { color: #7E3C13; }
+
+  .nav-dropdown { position: relative; display: inline-block; }
+  .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 12px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; margin-top: 8px; }
+  .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
+  .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB; overflow-x: hidden;">
+<div style="background: #FBF5EB;">
 
-  <header style="max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <a href="../index.html" style="min-width: 200px; display: flex; align-items: center; gap: 10px; text-decoration: none;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -40,17 +46,46 @@
     </a>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <a href="../hverdagen.html" style="color: #4A3B32;">Hverdagen</a>
-      <a href="../reisebyraet.html" style="color: #4A3B32;">Reisebyrået</a>
-      <a href="../guide.html" style="color: #4A3B32;">Som guide</a>
-      <a href="../rommene.html" style="color: #4A3B32;">Rommene</a>
-      <a href="../bryllup.html" style="color: #4A3B32;">Bryllup</a>
-      <a href="../reiser.html" style="color: #4A3B32;">Reiser</a>
-      <a href="../sevilla-i-et-notteskall.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">I et nøtteskall</a>
-      <a href="../om-meg.html" style="color: #4A3B32;">Om meg</a>
+      <div class="nav-dropdown">
+        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
+          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
+          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
+          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
+          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
+          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
+          <a href="../bloggposter/triana-sevilla.html">Triana</a>
+          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
+          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
+          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
+          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../reisebyraet.html">Reisebyrået</a>
+          <a href="../reiser.html">Reiser</a>
+          <a href="../bryllup.html">Bryllup</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
+        <div class="nav-dropdown-panel">
+          <a href="../om-meg.html">Om meg</a>
+          <a href="../hverdagen.html">Hverdagen</a>
+          <a href="../guide.html">Som guide</a>
+          <a href="../rommene.html">Rommene</a>
+        </div>
+      </div>
+    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
+  <div style="height: 92px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -72,7 +107,18 @@
   <article style="max-width: 780px; margin: 0 auto; padding: 46px 40px 10px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; line-height: 1.6; color: #7E5A3C; margin: 0 0 30px;">Santa Cruz er Sevillas gamle jødiske kvarter, kjent for trange hvitkalkede gater, og fritt tilgjengelig å utforske. Hvite hus med gule rammer, bougainvillea i hvert hjørne, duften av appelsinblomster i de smale gatene. Men historien bak dette vakre bildet er langt mer fascinerende enn postkortene forteller.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Designet for turister – i 1929</h2>
+    <div style="background: #F3E7D3; border-radius: 4px; padding: 22px 26px; margin: 0 0 34px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Innhold</div>
+      <ol style="margin: 0; padding-left: 20px; color: #57473C; font-size: 16px; line-height: 1.7;">
+        <li><a href="#designet-for-turister-i-1929">Designet for turister – i 1929</a></li>
+        <li><a href="#la-juderia-det-som-la-her-f-r">La Judería – det som lå her før</a></li>
+        <li><a href="#gater-med-dramatiske-navn">Gater med dramatiske navn</a></li>
+        <li><a href="#sevillas-h-yeste-punkt-og-mitt-bergenske">Sevillas høyeste punkt – og mitt bergenske blikk</a></li>
+        <li><a href="#labyrinten-som-aldri-gir-deg-alt-pa-en-g">Labyrinten som aldri gir deg alt på én gang</a></li>
+      </ol>
+    </div>
+
+    <h2 id="designet-for-turister-i-1929" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Designet for turister – i 1929</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Her kommer hemmeligheten som overrasker nesten alle: Santa Cruz slik vi ser det i dag ble i stor grad designet og ferdigstilt til verdensutstillingen i Sevilla i 1929. Ideen var å skape noe genuint andalusisk – romantisk, regionalistisk og visuelt overveldende – for nettopp å tiltrekke besøkende til Sevilla.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Det er noe fascinerende og nesten morsomt ved tanken: at noen i 1929 allerede hadde turistblikket. At de forstod at det hvite og det blomstrende og det labyrintaktige ville gjøre noe med folk. Og de hadde rett – nesten hundre år senere virker det fremdeles akkurat like sterkt.</p>
 
@@ -83,11 +129,11 @@
       <figcaption style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15.5px; color: #9A7B54; margin-top: 10px; text-align: center;">Gatene i Santa Cruz er et virvar av labyrintgater hvor du finner barer uten skilt på hver liten plass og hjørne.</figcaption>
     </figure>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">La Judería – det som lå her før</h2>
+    <h2 id="la-juderia-det-som-la-her-f-r" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">La Judería – det som lå her før</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Lenge før 1929 var dette kvarteret kjent under et annet navn: <em>La Judería</em> – det jødiske kvarteret. I middelalderen var Sevilla hjem til en av de største jødiske befolkningene på den iberiske halvøy, og dette var deres bydel – et tett, livlig, pulserende hjerte av handel, lærdom og kultur.</p>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Historien til La Judería er full av det som gjør historien menneskelig og rystende på én gang. Moskeer ble gjort om til synagoger. Synagoger ble gjort om til kirker. Familier som hadde levd her i generasjoner ble fordrevet i 1391 og igjen i 1492 – da Fernando og Isabel bestemte at jødene skulle forlate Spania. Noen av de smaleste gatene og de lukkede patioene i Santa Cruz bærer ennå på ekkoet av det som var.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Gater med dramatiske navn</h2>
+    <h2 id="gater-med-dramatiske-navn" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Gater med dramatiske navn</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 24px;">En av de tingene jeg elsker mest med å gå gjennom Santa Cruz er gatenavnene. De er ikke tilfeldige – de forteller historier, noen romantiske, noen dystre, noen mystiske.</p>
 
     <div style="background: #F3E7D3; border-radius: 4px; padding: 26px 30px; margin: 0 0 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 14px 24px;">
@@ -99,12 +145,12 @@
 
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">At Livets gate og Dødens gate ligger side om side i denne labyrinten er ikke tilfeldig. Santa Cruz er en bydel som alltid har rommet begge deler – det vakre og det tragiske, det lysende og det mørke – like tett på hverandre som husene i de smale gatene.</p>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevillas høyeste punkt – og mitt bergenske blikk</h2>
+    <h2 id="sevillas-h-yeste-punkt-og-mitt-bergenske" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Sevillas høyeste punkt – og mitt bergenske blikk</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Jeg kommer fra Bergen – en by omgitt av høye fjell. Sevilla er kjent for å være flat, og det er den stort sett. Men midt inne i Santa Cruz-kvarteret finner du faktisk Sevillas høyeste punkt: en liten, tilsynelatende helt vanlig gate som heter <em>Calle Aire</em> – rundt 115 meter over havet. Ingen skilt, ingen utsiktsplass, ingen turistattraksjoner.</p>
 
     <blockquote style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 25px; line-height: 1.4; color: #35281F; margin: 34px 0; padding-left: 26px; border-left: 3px solid #D9631A;">«Jeg kommer fra Bergen med sine høye fjell. Sevillas høyeste punkt er en helt vanlig liten gate – Calle Aire – midt i labyrinten. Ingen skilt, ingen utsikt. Bare en gate som alle andre, 115 meter over havet. Det er så Santa Cruz.»</blockquote>
 
-    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Labyrinten som aldri gir deg alt på én gang</h2>
+    <h2 id="labyrinten-som-aldri-gir-deg-alt-pa-en-g" style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(26px,3.4vw,36px); margin: 40px 0 18px; color: #35281F;">Labyrinten som aldri gir deg alt på én gang</h2>
     <p style="font-size: 18.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 30px;">Santa Cruz er en eneste stor labyrint – og det er meningen. En sving for mye, et hjørne du ikke la merke til – og vips er du et sted helt annet enn du hadde planlagt. Selv om Santa Cruz med årene har blitt mer besøkt, finnes det fremdeles steder her inne hvor tiden har stått stille. Det krever litt tålmodighet og litt vilje til å gå seg bort – men det er alltid verdt det.</p>
 
     <figure style="margin: 0 0 40px;">
@@ -151,7 +197,12 @@
   </section>
 
   <footer style="background: #6E4128; color: #E8DAC8;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 40px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 14px; color: #C9B7A2;">
+      <span>Milano Govinda 35, 41020 Sevilla</span>
+      <a href="tel:+34637878768" style="color: #C9B7A2;">+34 637 87 87 68</a>
+      <a href="mailto:post@spaniaopplevelser.no" style="color: #C9B7A2;">post@spaniaopplevelser.no</a>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; padding: 24px 40px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13.5px; color: #A18E78;">
       <span>© 2026 Sevilla på norsk</span>
       <span>Norsk blogg fra Sevilla i over 30 år</span>
     </div>
