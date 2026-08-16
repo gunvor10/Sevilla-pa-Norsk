@@ -6,6 +6,8 @@
 <title>Om Gunvor – norsk guide og reiselivsgründer i Sevilla i 30 år</title>
 <meta name="description" content="58 år, fra Bergen, bosatt i Sevilla siden 1994. Offisiell norsk guide, reisebyrågründer og vertinne — dette er historien min.">
 <link rel="canonical" href="https://gunvor10.github.io/Sevilla-pa-Norsk/om-meg.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Om Gunvor – norsk guide og reiselivsgründer i Sevilla i 30 år">
@@ -40,10 +42,10 @@
 </style>
 </head>
 <body>
-<div style="background: #FBF5EB;">
+<div style="--accent: {{ accent }}; --radius: {{ radius }}; background: #FBF5EB;">
 
   <!-- ============ TOP BAR ============ -->
-  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 26px 40px 20px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; background: #FBF5EB; max-width: 1240px; margin: 0 auto; padding: 22px 40px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
     <div style="min-width: 200px; display: flex; align-items: center; gap: 10px;">
       <div>
         <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1; color: #35281F;">Sevilla <span style="font-style: italic; color: #D9631A;">på norsk</span></div>
@@ -60,6 +62,11 @@
     </label>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="index.html" style="color: #4A3B32;">Hjem</a>
+      
+      
+      
+      
+      
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">Utforsk ▾</span>
         <div class="nav-dropdown-panel">
@@ -72,12 +79,19 @@
           <a href="bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
           <a href="bloggposter/triana-sevilla.html">Triana</a>
           <a href="bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
+          <a href="bloggposter/maria-luisa-parken-expo-1929.html">María Luisa-parken &amp; Expo 1929</a>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Mat &amp; marked</div>
+          <a href="bloggposter/matmarkeder-i-sevilla.html">Sevillas beste matmarkeder</a>
+          <a href="bloggposter/tapasbarer-i-sevilla.html">10 beste tapasbarer</a>
           <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
           <a href="bloggposter/camino-santiago.html">Camino Santiago</a>
           <a href="bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
           <a href="bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
-        </div>
-      </div>
+          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Planlegging</div>
+          <a href="bloggposter/beste-tid-a-besoke-sevilla.html">Beste tid å besøke Sevilla</a>
+          <a href="bloggposter/sommer-i-sevilla-tips.html">Hva gjøre om sommeren</a>
+          <a href="bloggposter/elveaktiviteter-guadalquivir-sevilla.html">Elveaktiviteter på Guadalquivir</a>
+        </div></div>
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
         <div class="nav-dropdown-panel">
@@ -87,7 +101,7 @@
         </div>
       </div>
       <div class="nav-dropdown">
-        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Om meg ▾</span>
+        <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
         <div class="nav-dropdown-panel">
           <a href="om-meg.html">Om meg</a>
           <a href="hverdagen.html">Hverdagen</a>
@@ -256,6 +270,48 @@
     </div>
   </section>
 
+  <!-- ============ TESTIMONIALS ============ -->
+  <section style="background: #F3E7D3;">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 78px 40px;">
+      <div style="text-align: center; margin-bottom: 46px;">
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(34px, 4.5vw, 52px); margin: 0 0 8px; color: #35281F;">Hva gjestene sier</h2>
+        <p style="font-size: 18px; color: #6B5A4C; margin: 0;">Noen ord fra folk jeg har hatt gleden av å guide</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«Gunvor was a delightful host for our trip to Seville. She was also flexible with our schedule and extremely knowledgeable about the city's history. I highly recommend her.»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">Tim Barber</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">USA</div>
+          </div>
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«Vi var heldige å få anbefalt Gunvor fra Spaniaopplevelser som arrangør og turguide. Vi hadde en fantastisk og spennende tur og kan varmt anbefale Gunvor og hennes firma.»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">Erling Mortensen</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">Danmark</div>
+          </div>
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«We had the absolute pleasure of working with Gunvor for our family reunion in Sevilla. Her attention to detail and ability to create a fun and memorable atmosphere made it truly unforgettable.»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">Flores family</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">USA</div>
+          </div>
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«We had an amazing day. It was everything we had hoped for. The car, driver, Iberico ham tour and lunch was amazing. Thank you so much for organising this experience for us.»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">Rebecca Garrett</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">USA</div>
+          </div>
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«Hadde med en stor gruppe på 70 personer, 3 døgn til Alicante. Ikke enkelt å lage et godt opplegg for så stor gruppe, men her ble det full klaff. Alt av transport og guiding fungerte helt utmerket. Kan virkelig anbefales for små og store grupper!»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">John Inge</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">Google-anmeldelse</div>
+          </div>
+        <div style="background: #FBF5EB; border-radius: 4px; padding: 28px 26px; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18.5px; line-height: 1.6; color: #4E3E33; margin: 0 0 16px;">«Vi valgte å gifte oss i Spania juli 2023. Tilgjengelighet, detaljfokusert og lydhør for mine ønsker er stikkord på Gunvor. Hun fant det vakreste stedet for både opphold og seremoni, og det var ikke en ting hun ikke kunne fikse. De VARMESTE anbefalinger!»</p>
+            <div style="font-family: 'EB Garamond', serif; font-size: 14.5px; color: #35281F; font-weight: 600;">Gina Stenbakk Jensen</div>
+            <div style="font-size: 13px; color: #9A7B54; letter-spacing: 0.06em;">Google-anmeldelse</div>
+          </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CTA ============ -->
   <section style="max-width: 1180px; margin: 0 auto; padding: 30px 40px 80px;">
     <div style="background: #6E4128; border-radius: 4px; padding: clamp(40px, 6vw, 72px); text-align: center; color: #F0E4D2;">
@@ -276,7 +332,7 @@
     <div style="font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: #9A7B54; margin-bottom: 12px;">🍊 Gracias · Tusen takk</div>
     <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(30px, 4vw, 46px); line-height: 1.12; margin: 0 0 8px; color: #35281F;">Glad for at du <span style="font-style: italic; color: #D9631A;">tok deg tid til å lese</span></h2>
     <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 20px; color: #7E5A3C; margin: 0 0 24px;">– Gunvor, fra hjertet av Sevilla</p>
-    <p style="font-size: 19px; line-height: 1.8; color: #4E3E33; margin: 0 auto 22px; max-width: 34em;">Jeg håper du nå kjenner meg litt bedre. Sevilla er en by som fortjener å oppleves med sjelen — bli med meg på tur, med en som kjenner byen innenfra. Enten du drømmer om et bryllup, en firmatur, en guidet omvisning eller bare en god samtale om Spania — ta gjerne kontakt.</p>
+    <p style="font-size: 19px; line-height: 1.8; color: #4E3E33; margin: 0 auto 22px; max-width: 34em;">Jeg håper du nå kjenner meg litt bedre. Sevilla er en by som fortjener å oppleves med sjelen — bli med meg på tur, med en som kjenner byen innenfra. Enten du drømmer om et bryllup, en firmatur eller en guidet omvisning.</p>
     <p style="font-size: 18px; color: #57473C; margin: 0;">Følg meg på Instagram <a href="https://www.instagram.com/gunvor_i_sevilla" style="color: #D9631A;">@gunvor_i_sevilla</a> 🌅</p>
     <div style="font-family: 'Caveat', cursive; font-size: 32px; color: #35281F; margin-top: 20px;">– Gunvor 🍊</div>
   </section>
@@ -306,6 +362,14 @@
             <a href="https://www.facebook.com/Sevillaprivateguidegunvor/" style="color: #E8DAC8;">Facebook</a>
             <a href="https://www.linkedin.com/in/gunvor-guttormsen-ba05a728/" style="color: #E8DAC8;">LinkedIn</a>
             <a href="kontakt.html" style="color: #E8DAC8;">Kontakt meg</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #A18E78; margin-bottom: 14px;">Kontakt</div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-size: 16.5px; color: #E8DAC8;">
+            <span>Milano Govinda 35, 41020 Sevilla</span>
+            <a href="tel:+34637878768" style="color: #E8DAC8;">+34 637 87 87 68</a>
+            <a href="mailto:post@spaniaopplevelser.no" style="color: #E8DAC8;">post@spaniaopplevelser.no</a>
           </div>
         </div>
       </div>
