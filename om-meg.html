@@ -37,6 +37,7 @@
   .nav-dropdown { position: relative; display: inline-block; }
   .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 16px 12px 12px; margin-top: -4px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; }
   .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown.open .nav-dropdown-panel { display: flex; }
   .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
   .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
@@ -62,42 +63,22 @@
     </label>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="index.html" style="color: #4A3B32;">Hjem</a>
+      <a href="inspirasjon.html" style="color: #4A3B32;">Inspirasjon</a>
       
       
       
       
       
-      <div class="nav-dropdown">
-        <span style="color: #4A3B32; cursor: default;">Utforsk ▾</span>
-        <div class="nav-dropdown-panel">
-          <a href="sevilla-i-et-notteskall.html">I et nøtteskall</a>
-          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
-          <a href="bloggposter/alcazar-sevilla.html">Alcázar</a>
-          <a href="bloggposter/katedralen-sevilla.html">Katedralen</a>
-          <a href="bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
-          <a href="bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
-          <a href="bloggposter/triana-sevilla.html">Triana</a>
-          <a href="bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
-          <a href="bloggposter/maria-luisa-parken-expo-1929.html">María Luisa-parken &amp; Expo 1929</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Mat &amp; marked</div>
-          <a href="bloggposter/matmarkeder-i-sevilla.html">Sevillas beste matmarkeder</a>
-          <a href="bloggposter/tapasbarer-i-sevilla.html">10 beste tapasbarer</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
-          <a href="bloggposter/camino-santiago.html">Camino Santiago</a>
-          <a href="bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
-          <a href="bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Planlegging</div>
-          <a href="bloggposter/beste-tid-a-besoke-sevilla.html">Beste tid å besøke Sevilla</a>
-          <a href="bloggposter/sommer-i-sevilla-tips.html">Hva gjøre om sommeren</a>
-          <a href="bloggposter/elveaktiviteter-guadalquivir-sevilla.html">Elveaktiviteter på Guadalquivir</a>
-        </div></div>
+      
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
         <div class="nav-dropdown-panel">
+          <a href="guide.html">Som guide</a>
+          <a href="inspirasjon.html#turer">Turer</a>
           <a href="reisebyraet.html">Reisebyrået</a>
           <a href="reiser.html">Reiser</a>
           <a href="bryllup.html">Bryllup</a>
+          <a href="rommene.html">Rommene</a>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -105,15 +86,14 @@
         <div class="nav-dropdown-panel">
           <a href="om-meg.html">Om meg</a>
           <a href="hverdagen.html">Hverdagen</a>
-          <a href="guide.html">Som guide</a>
-          <a href="rommene.html">Rommene</a>
         </div>
       </div>
-    <a href="kontakt.html" style="color: #4A3B32;">Kontakt</a>
+      <a href="kontakt.html" style="color: #4A3B32;">Kontakt</a>
+    <a href="en/om-meg.html" style="color: #4A3B32; font-style: italic;">🇺🇸 English</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
-  <div style="height: 92px;"></div>
+  <div style="height: 130px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <!-- ============ HERO ============ -->
@@ -211,6 +191,80 @@
     <p style="font-size: 19.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">Jeg lengtet etter å jobbe mer i Sevilla og vise frem denne flotte byen — ikke bare til nordmenn, men til reisende fra hele verden. Nye produkter fikk se sitt lys, og jeg startet <strong style="font-weight: 600; color: #35281F;">DMC Seville Event</strong>. Med stor glede tar jeg nå imot incentive-grupper fra Nord-Europa og USA og viser dem Sevillas maravillas — byens vidundere.</p>
     <p style="font-size: 19.5px; line-height: 1.85; color: #4E3E33; margin: 0 0 20px;">For å kunne vise nordmenn Sevilla på norsk tok jeg historieboken for meg og ble den eneste offisielle norske guiden i Sevilla. Det er en tittel jeg er veldig stolt av.</p>
     <p style="font-size: 19.5px; line-height: 1.85; color: #4E3E33; margin: 0;">Etter hvert kom det mange forespørsler om bryllup i Sevilla — for dette er en romantisk by som inspirerer kjærlighet. Jeg startet <strong style="font-weight: 600; color: #35281F;">Sevilla Event Luxury Weddings</strong> og tilrettelegger i dag for vakre bryllup i historiske palasser i Sevilla eller sjarmerende haciendas i området rundt.</p>
+  </section>
+
+  <!-- ============ MINE FAVORITTSTEDER (fra Sevilla i et nøtteskall) ============ -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 20px 40px 40px;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <div style="font-family: 'EB Garamond', serif; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Sevilla i et nøtteskall</div>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(32px, 4vw, 46px); margin: 0 0 12px; color: #35281F;">Mine favorittsteder</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: #6B5A4C; max-width: 34em; margin: 0 auto;">Steder jeg elsker — og som du ikke finner i alle reiseguider. Etter 30 år har jeg mine helt egne favoritter.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/mercado-triana-sevilla.png" alt="Mercado de Triana" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Marked</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Mercado de Triana</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">Det livligste markedet i byen — fersk fisk, oliven og en kaffe blant lokale. Best tidlig om morgenen.</div>
+          </div>
+        </div>
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/giralda-utsikt-santa-cruz-sevilla.png" alt="Barrio Santa Cruz" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Bydel</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Barrio Santa Cruz</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">Den gamle jødiske bydelen — labyrinten av smug hvor jeg fortsatt går meg vill, med vilje.</div>
+          </div>
+        </div>
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/overview-plaza-espana-sevilla.png" alt="Plaza de España" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Arkitektur</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Plaza de España</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">Et av Spanias vakreste plasser. Kom ved solnedgang, når flisene gløder.</div>
+          </div>
+        </div>
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/typisk-tapasbar-sevilla.png" alt="Min hemmelige tapasbar" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Mat & drikke</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Min hemmelige tapasbar</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">Den lille baren uten skilt, der de fortsatt husker navnet mitt. Du får adressen om du blir med meg.</div>
+          </div>
+        </div>
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/rio_guadalquivir_7199_1200.jpeg" alt="Río Guadalquivir" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Natur</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Río Guadalquivir</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">En spasertur langs elven i skumringen — min favorittmåte å avslutte dagen på.</div>
+          </div>
+        </div>
+        <div style="background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 44px -30px rgba(90,60,30,0.5);">
+          <div style="aspect-ratio: 3 / 2; overflow: hidden;">
+            <img src="uploads/alcazar-hager-sevilla.png" alt="Hagene i Alcázar" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px;">
+            <div style="font-family: 'EB Garamond', serif; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #D9631A; margin-bottom: 6px;">Hager</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; line-height: 1.1; color: #35281F; margin-bottom: 8px;">Hagene i Alcázar</div>
+            <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.55;">Palasshagene med appelsintrær, fontener og påfugler. Ren magi tidlig på dagen.</div>
+          </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="inspirasjon.html" style="font-size: 15px; color: #D9631A; border-bottom: 1px solid rgba(169,83,29,0.4); padding-bottom: 2px;">Les flere historier fra Sevilla →</a>
+    </div>
   </section>
 
   <!-- ============ DET JEG DRIVER MED ============ -->
@@ -383,5 +437,6 @@
   </footer>
 
 </div>
+<script src="nav-dropdown.js"></script>
 </body>
 </html>

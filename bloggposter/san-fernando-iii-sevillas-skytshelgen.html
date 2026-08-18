@@ -19,6 +19,7 @@
   .nav-dropdown { position: relative; display: inline-block; }
   .nav-dropdown-panel { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #FBF5EB; border-radius: 4px; box-shadow: 0 14px 30px -10px rgba(90,60,30,0.4); padding: 16px 12px 12px; margin-top: -4px; display: none; flex-direction: column; gap: 8px; min-width: 230px; z-index: 30; text-align: left; }
   .nav-dropdown:hover .nav-dropdown-panel { display: flex; }
+  .nav-dropdown.open .nav-dropdown-panel { display: flex; }
   .nav-dropdown-panel a { text-transform: none; letter-spacing: 0; font-size: 14.5px; color: #4A3B32; white-space: nowrap; }
   .nav-dropdown-panel a:hover { color: #D9631A; }
 </style>
@@ -32,38 +33,17 @@
     </label>
     <nav style="display: flex; align-items: center; gap: 26px; flex-wrap: wrap; justify-content: center; font-family: 'EB Garamond', serif; font-size: 13.5px; letter-spacing: 0.18em; text-transform: uppercase;">
       <a href="../index.html" style="color: #4A3B32;">Hjem</a>
-      <div class="nav-dropdown">
-        <span style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px; cursor: default;">Utforsk ▾</span>
-        <div class="nav-dropdown-panel">
-          <a href="../sevilla-i-et-notteskall.html">I et nøtteskall</a>
-          <div style="border-top: 1px solid rgba(59,47,39,0.14); margin: 4px 0;"></div>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 2px;">Severdigheter</div>
-          <a href="../bloggposter/alcazar-sevilla.html">Alcázar</a>
-          <a href="../bloggposter/katedralen-sevilla.html">Katedralen</a>
-          <a href="../bloggposter/santa-cruz-sevilla.html">Santa Cruz</a>
-          <a href="../bloggposter/plaza-espana-sevilla.html">Plaza de España</a>
-          <a href="../bloggposter/triana-sevilla.html">Triana</a>
-          <a href="../bloggposter/kirker-i-sevilla.html">De 7 vakreste kirkene i Sevilla</a>
-          <a href="../bloggposter/maria-luisa-parken-expo-1929.html">María Luisa-parken &amp; Expo 1929</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Mat &amp; marked</div>
-          <a href="../bloggposter/matmarkeder-i-sevilla.html">Sevillas beste matmarkeder</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Reiser &amp; historie</div>
-          <a href="../bloggposter/camino-santiago.html">Camino Santiago</a>
-          <a href="../bloggposter/sevilla-fra-fortid-til-natid.html">Sevilla historie</a>
-          <a href="../bloggposter/spaniaopplevelser-reisebyraa.html">Spaniaopplevelser</a>
-          <a href="../bloggposter/san-fernando-iii-sevillas-skytshelgen.html">San Fernando III</a>
-          <div style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A7B54; margin-top: 8px;">Planlegging</div>
-          <a href="../bloggposter/beste-tid-a-besoke-sevilla.html">Beste tid å besøke Sevilla</a>
-          <a href="../bloggposter/sommer-i-sevilla-tips.html">Hva gjøre om sommeren</a>
-          <a href="../bloggposter/elveaktiviteter-guadalquivir-sevilla.html">Elveaktiviteter på Guadalquivir</a>
-        </div>
-      </div>
+      <a href="../inspirasjon.html" style="color: #4A3B32;">Inspirasjon</a>
+      
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
         <div class="nav-dropdown-panel">
+          <a href="../guide.html">Som guide</a>
+          <a href="../inspirasjon.html#turer">Turer</a>
           <a href="../reisebyraet.html">Reisebyrået</a>
           <a href="../reiser.html">Reiser</a>
           <a href="../bryllup.html">Bryllup</a>
+          <a href="../rommene.html">Rommene</a>
         </div>
       </div>
       <div class="nav-dropdown">
@@ -71,15 +51,14 @@
         <div class="nav-dropdown-panel">
           <a href="../om-meg.html">Om meg</a>
           <a href="../hverdagen.html">Hverdagen</a>
-          <a href="../guide.html">Som guide</a>
-          <a href="../rommene.html">Rommene</a>
         </div>
       </div>
-    <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
+      <a href="../kontakt.html" style="color: #4A3B32;">Kontakt</a>
+    <a href="../en/bloggposter/san-fernando-iii-sevillas-skytshelgen.html" style="color: #4A3B32; font-style: italic;">🇺🇸 English</a>
     </nav>
     <a href="https://www.instagram.com/gunvor_i_sevilla" style="font-size: 13.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9631A; white-space: nowrap;">Følg meg →</a>
   </header>
-  <div style="height: 92px;"></div>
+  <div style="height: 130px;"></div>
   <div style="max-width: 1240px; margin: 0 auto; border-top: 1px solid rgba(59,47,39,0.12);"></div>
 
   <div style="max-width: 1000px; margin: 40px auto 0; padding: 0 40px;">
@@ -179,5 +158,6 @@
   </footer>
 
 </div>
+<script src="../nav-dropdown.js"></script>
 </body>
 </html>
