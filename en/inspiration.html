@@ -298,7 +298,7 @@
     var visible = 0;
     cards.forEach(function(card) {
       var show = filter === 'all' || card.getAttribute('data-category') === filter;
-      card.hidden = !show;
+      card.style.display = show ? 'block' : 'none';
       if (show) visible++;
     });
     if (emptyState) emptyState.hidden = visible > 0;
