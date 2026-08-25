@@ -95,7 +95,7 @@
   <section style="max-width: 1120px; margin: 0 auto; padding: 60px 40px 40px; text-align: center;">
     <div style="font-family: 'Caveat', cursive; font-size: 40px; line-height: 1; color: #D9631A; transform: rotate(-3deg); margin-bottom: 10px;">alt jeg elsker om byen</div>
     <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(40px, 5.5vw, 62px); line-height: 1.05; margin: 0 0 18px; color: #35281F;">Inspirasjon</h1>
-    <p style="font-size: 19px; line-height: 1.75; max-width: 42em; margin: 0 auto; color: #57473C;">De 12 siste historiene mine fra Sevilla — severdigheter, mat, reiser og praktiske tips.</p>
+    <p style="font-size: 19px; line-height: 1.75; max-width: 42em; margin: 0 auto; color: #57473C;">De 13 siste historiene mine fra Sevilla — severdigheter, mat, reiser og praktiske tips.</p>
   </section>
 
   <section style="max-width: 1200px; margin: 0 auto; padding: 0 40px 20px;">
@@ -105,8 +105,7 @@
       <button class="filter-btn" data-filter="food">Mat &amp; marked</button>
       <button class="filter-btn" data-filter="travel">Reiser &amp; historie</button>
       <button class="filter-btn" data-filter="planning">Planlegging</button>
-      <button class="filter-btn" data-filter="turer">Turer</button>
-    </div>
+      </div>
   </section>
 
   <section style="max-width: 1200px; margin: 0 auto; padding: 20px 40px 60px;">
@@ -154,7 +153,7 @@
       </a>
       <a class="post-card" data-category="sights" href="bloggposter/triana-sevilla.html" style="display: block; background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 16px 34px -26px rgba(90,60,30,0.5);">
         <div style="aspect-ratio: 4 / 3; overflow: hidden;">
-          <img src="uploads/triana-og-isabel-II-broen-sevilla.png" alt="Triana" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="uploads/triana-og-isabel-II-broen-sevilla.jpg" alt="Triana" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div style="padding: 22px 24px 24px;">
           <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Severdigheter</div>
@@ -190,6 +189,16 @@
           <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Mat & marked</div>
           <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; color: #35281F; margin-bottom: 8px;">Sevillas beste matmarkeder</div>
           <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.6;">Der jeg selv handler råvarer →</div>
+        </div>
+      </a>
+      <a class="post-card" data-category="travel" href="bloggposter/flamenco-i-sevilla.html" style="display: block; background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 16px 34px -26px rgba(90,60,30,0.5);">
+        <div style="aspect-ratio: 4 / 3; overflow: hidden;">
+          <img src="uploads/flamenco-dance-private-party.jpg" alt="Flamenco i Sevilla" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="padding: 22px 24px 24px;">
+          <div style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #9A7B54; margin-bottom: 10px;">Reiser & historie</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 24px; color: #35281F; margin-bottom: 8px;">Flamenco i Sevilla</div>
+          <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.6;">7 måter å se og oppleve den →</div>
         </div>
       </a>
       <a class="post-card" data-category="travel" href="bloggposter/camino-santiago.html" style="display: block; background: #F3E7D3; border-radius: 4px; overflow: hidden; box-shadow: 0 16px 34px -26px rgba(90,60,30,0.5);">
@@ -310,10 +319,6 @@
       applyFilter(btn.getAttribute('data-filter'));
     });
   });
-  if (window.location.hash === '#turer') {
-    var turerBtn = document.querySelector('[data-filter="turer"]');
-    if (turerBtn) turerBtn.click();
-  }
 </script>
 <script src="nav-dropdown.js"></script>
 <a href="https://wa.me/34637878768" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:22px;right:22px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);z-index:9999;">
