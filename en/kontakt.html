@@ -54,23 +54,18 @@
       <a href="things-to-do-in-seville.html" style="color: #4A3B32;">Things to do</a>
       <a href="inspiration.html" style="color: #4A3B32;">Inspiration</a>
       
-      <div class="nav-dropdown">
-        <span style="color: #4A3B32; cursor: default;">Services ▾</span>
-        <div class="nav-dropdown-panel">
-          <a href="guide.html">As a Guide</a>
-          <a href="guide.html#turer">Tours</a>
-          <a href="reisebyraet.html">The Agency</a>
-          <a href="https://flavorsofandalucia.com/best-private-tours-seville/" target="_blank" rel="noopener">Flavors of Andalucia</a>
-          <a href="reiser.html">Travels</a>
-          <a href="bryllup.html">Weddings</a>
-          <a href="rommene.html">Rooms</a>
-        </div>
-      </div>
+      <a href="tours.html" style="color: #4A3B32;">Tours</a>
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">About ▾</span>
         <div class="nav-dropdown-panel">
           <a href="om-meg.html">About me</a>
           <a href="hverdagen.html">Everyday life</a>
+          <a href="guide.html">As a Guide</a>
+          <a href="reisebyraet.html">The Agency</a>
+          <a href="https://flavorsofandalucia.com/best-private-tours-seville/" target="_blank" rel="noopener">Flavors of Andalucia</a>
+          <a href="reiser.html">Travels</a>
+          <a href="bryllup.html">Weddings</a>
+          <a href="rommene.html">Rooms</a>
         </div>
       </div>
       <a href="kontakt.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">Contact</a>
@@ -158,6 +153,49 @@
     <div style="border-top: 1px solid rgba(227,234,223,0.16);"><div style="max-width: 1200px; margin: 0 auto; padding: 20px 40px; font-size: 13.5px; letter-spacing: 0.04em; color: #8FA697; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;"><span>© 2026 Sevilla på norsk</span><span>Norwegian blog from Seville, for over 30 years</span></div></div>
   </footer>
 </div>
+<script>
+(function(){
+  var ENDPOINT = 'https://formspree.io/f/mnpqbnaz';
+  var form = document.querySelector('form');
+  if (!form) return;
+  form.setAttribute('id','kontaktskjema');
+  var f = form.querySelectorAll('input, select, textarea');
+  var fornavn=f[0], etternavn=f[1], epost=f[2], emne=f[3], melding=f[4], telefon=f[5];
+  var btn = form.querySelector('button[type="submit"]');
+  var note = document.createElement('div');
+  note.style.cssText = 'display:none;font-size:16px;line-height:1.6;color:#3B2F27;padding:14px 16px;border-radius:4px;background:#FBF5EB;border:1px solid rgba(59,47,39,0.18);';
+  form.appendChild(note);
+  function show(html, ok){
+    note.innerHTML = html;
+    note.style.display = 'block';
+    note.style.borderColor = ok ? 'rgba(217,99,26,0.45)' : 'rgba(59,47,39,0.18)';
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!melding.value.trim()) { melding.focus(); return; }
+    var navn = [fornavn.value.trim(), etternavn.value.trim()].filter(Boolean).join(' ');
+    var data = new FormData();
+    data.append('Name', navn);
+    data.append('email', epost.value.trim());
+    if (telefon && telefon.value.trim()) data.append('Phone', telefon.value.trim());
+    if (emne.selectedIndex > 0) data.append('Regarding', emne.value);
+    data.append('Message', melding.value.trim());
+    data.append('_subject', (emne.selectedIndex > 0 ? emne.value : 'Enquiry from the website') + (navn ? ' – ' + navn : ''));
+    btn.disabled = true; btn.style.opacity = '0.6'; btn.textContent = 'Sending…';
+    fetch(ENDPOINT, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+      .then(function(r){
+        if (!r.ok) throw new Error('http ' + r.status);
+        form.reset();
+        show('Thank you! Your message has been sent. I will reply as soon as I can.', true);
+        btn.style.display = 'none';
+      })
+      .catch(function(){
+        show('Something went wrong. Please write directly to <a href="mailto:post@spaniaopplevelser.no" style="color:#D9631A;">post@spaniaopplevelser.no</a>.', false);
+        btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Send message';
+      });
+  });
+})();
+</script>
 <script src="../nav-dropdown.js"></script>
 <a href="https://wa.me/34637878768" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:22px;right:22px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);z-index:9999;">
 <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16.001 3C9.383 3 4 8.373 4 14.98c0 2.55.792 4.92 2.15 6.876L4.6 27l5.32-1.516A12.86 12.86 0 0016 27.02C22.617 27.02 28 21.646 28 15.04 28 8.373 22.617 3 16.001 3zm0 22.16a10.1 10.1 0 01-5.303-1.484l-.38-.226-3.155.9.926-3.06-.246-.394A10.02 10.02 0 015.94 14.98c0-5.554 4.53-10.07 10.06-10.07 5.552 0 10.06 4.516 10.06 10.07 0 5.553-4.508 10.18-10.06 10.18zm5.51-7.55c-.302-.15-1.784-.878-2.06-.978-.276-.1-.478-.15-.68.15-.2.3-.78.978-.955 1.178-.176.2-.352.226-.653.075-.302-.15-1.274-.47-2.428-1.5-.897-.8-1.503-1.79-1.68-2.093-.176-.302-.02-.465.13-.615.15-.15.352-.39.528-.585.176-.196.234-.334.35-.556.117-.222.058-.4-.04-.556-.1-.15-.63-1.518-.864-2.08-.23-.556-.464-.48-.638-.487l-.542-.01c-.176 0-.463.065-.71.315-.245.25-.936.916-.936 2.234s.96 2.596 1.093 2.776c.132.18 1.826 2.79 4.43 3.802 2.605 1.01 2.605.674 3.075.63.47-.044 1.784-.73 2.033-1.44.25-.71.25-1.317.176-1.44-.076-.126-.29-.2-.59-.35z"/></svg>

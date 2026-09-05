@@ -63,22 +63,17 @@
       <a href="sevilla-i-et-notteskall.html" style="color: #4A3B32;">Ting å gjøre</a>
       <a href="inspirasjon.html" style="color: #4A3B32;">Inspirasjon</a>
       
-      <div class="nav-dropdown">
-        <span style="color: #4A3B32; cursor: default;">Tjenester ▾</span>
-        <div class="nav-dropdown-panel">
-          <a href="guide.html">Som guide</a>
-          <a href="guide.html#turer">Turer</a>
-          <a href="reisebyraet.html">Reisebyrået</a>
-          <a href="reiser.html">Reiser</a>
-          <a href="bryllup.html">Bryllup</a>
-          <a href="rommene.html">Rommene</a>
-        </div>
-      </div>
+      <a href="turer.html" style="color: #4A3B32;">Turer</a>
       <div class="nav-dropdown">
         <span style="color: #4A3B32; cursor: default;">Om meg ▾</span>
         <div class="nav-dropdown-panel">
           <a href="om-meg.html">Om meg</a>
           <a href="hverdagen.html">Hverdagen</a>
+          <a href="guide.html">Som guide</a>
+          <a href="reisebyraet.html">Spaniaopplevelser</a>
+          <a href="reiser.html">Reiser</a>
+          <a href="bryllup.html">Bryllup</a>
+          <a href="rommene.html">Rommene</a>
         </div>
       </div>
       <a href="kontakt.html" style="color: #3B2F27; border-bottom: 2px solid #D9631A; padding-bottom: 3px;">Kontakt</a>
@@ -168,7 +163,7 @@
           <div style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #8FA697; margin-bottom: 14px;">Bloggen</div>
           <div style="display: flex; flex-direction: column; gap: 9px; font-size: 16.5px;">
             <a href="hverdagen.html" style="color: #E3EADF;">Hverdagen min</a>
-            <a href="reisebyraet.html" style="color: #E3EADF;">Reisebyrået</a>
+            <a href="reisebyraet.html" style="color: #E3EADF;">Spaniaopplevelser</a>
             <a href="guide.html" style="color: #E3EADF;">Som guide</a>
             <a href="bryllup.html" style="color: #E3EADF;">Bryllup i Spania</a>
           </div>
@@ -202,6 +197,49 @@
   </footer>
 
 </div>
+<script>
+(function(){
+  var ENDPOINT = 'https://formspree.io/f/mnpqbnaz';
+  var form = document.querySelector('form');
+  if (!form) return;
+  form.setAttribute('id','kontaktskjema');
+  var f = form.querySelectorAll('input, select, textarea');
+  var fornavn=f[0], etternavn=f[1], epost=f[2], emne=f[3], melding=f[4], telefon=f[5];
+  var btn = form.querySelector('button[type="submit"]');
+  var note = document.createElement('div');
+  note.style.cssText = 'display:none;font-size:16px;line-height:1.6;color:#3B2F27;padding:14px 16px;border-radius:4px;background:#FBF5EB;border:1px solid rgba(59,47,39,0.18);';
+  form.appendChild(note);
+  function show(html, ok){
+    note.innerHTML = html;
+    note.style.display = 'block';
+    note.style.borderColor = ok ? 'rgba(217,99,26,0.45)' : 'rgba(59,47,39,0.18)';
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!melding.value.trim()) { melding.focus(); return; }
+    var navn = [fornavn.value.trim(), etternavn.value.trim()].filter(Boolean).join(' ');
+    var data = new FormData();
+    data.append('Navn', navn);
+    data.append('email', epost.value.trim());
+    if (telefon && telefon.value.trim()) data.append('Telefon', telefon.value.trim());
+    if (emne.selectedIndex > 0) data.append('Gjelder', emne.value);
+    data.append('Melding', melding.value.trim());
+    data.append('_subject', (emne.selectedIndex > 0 ? emne.value : 'Henvendelse fra nettsiden') + (navn ? ' – ' + navn : ''));
+    btn.disabled = true; btn.style.opacity = '0.6'; btn.textContent = 'Sender…';
+    fetch(ENDPOINT, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+      .then(function(r){
+        if (!r.ok) throw new Error('http ' + r.status);
+        form.reset();
+        show('Takk! Meldingen er sendt. Jeg svarer så fort jeg kan.', true);
+        btn.style.display = 'none';
+      })
+      .catch(function(){
+        show('Noe gikk galt. Send gjerne direkte til <a href="mailto:post@spaniaopplevelser.no" style="color:#D9631A;">post@spaniaopplevelser.no</a>.', false);
+        btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Send melding';
+      });
+  });
+})();
+</script>
 <script src="nav-dropdown.js"></script>
 <a href="https://wa.me/34637878768" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:22px;right:22px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);z-index:9999;">
 <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16.001 3C9.383 3 4 8.373 4 14.98c0 2.55.792 4.92 2.15 6.876L4.6 27l5.32-1.516A12.86 12.86 0 0016 27.02C22.617 27.02 28 21.646 28 15.04 28 8.373 22.617 3 16.001 3zm0 22.16a10.1 10.1 0 01-5.303-1.484l-.38-.226-3.155.9.926-3.06-.246-.394A10.02 10.02 0 015.94 14.98c0-5.554 4.53-10.07 10.06-10.07 5.552 0 10.06 4.516 10.06 10.07 0 5.553-4.508 10.18-10.06 10.18zm5.51-7.55c-.302-.15-1.784-.878-2.06-.978-.276-.1-.478-.15-.68.15-.2.3-.78.978-.955 1.178-.176.2-.352.226-.653.075-.302-.15-1.274-.47-2.428-1.5-.897-.8-1.503-1.79-1.68-2.093-.176-.302-.02-.465.13-.615.15-.15.352-.39.528-.585.176-.196.234-.334.35-.556.117-.222.058-.4-.04-.556-.1-.15-.63-1.518-.864-2.08-.23-.556-.464-.48-.638-.487l-.542-.01c-.176 0-.463.065-.71.315-.245.25-.936.916-.936 2.234s.96 2.596 1.093 2.776c.132.18 1.826 2.79 4.43 3.802 2.605 1.01 2.605.674 3.075.63.47-.044 1.784-.73 2.033-1.44.25-.71.25-1.317.176-1.44-.076-.126-.29-.2-.59-.35z"/></svg>
