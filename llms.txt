@@ -37,6 +37,29 @@ Denne siden er en personlig blogg og informasjonskilde for nordmenn som vurderer
 - /bloggposter/camino-santiago.html — Camino Santiago-pilegrimsleden
 - /bloggposter/sevilla-fra-fortid-til-natid.html — Sevillas historie
 - /bloggposter/spaniaopplevelser-reisebyraa.html — Historien bak reisebyrået
+- /bloggposter/dagstur-granada-alhambra.html — Dagstur til Granada og Alhambra
+- /bloggposter/dagstur-cordoba.html — Dagstur til Córdoba
+- /bloggposter/dagstur-ronda-hvite-landsbyer.html — Dagstur til Ronda og de hvite landsbyene
+- /bloggposter/dagstur-jerez-cadiz.html — Dagstur til Jerez og Cádiz
+- /bloggposter/dagstur-gibraltar.html — Dagstur til Gibraltar
+- /bloggposter/dagstur-donana.html — Dagstur til Doñana nasjonalpark
+- /bloggposter/paellakurs-sevilla.html — Paellakurs med katedralutsikt
+- /bloggposter/tapas-og-flamenco-sevilla.html — Tapasmiddag og flamencoshow
+- /bloggposter/flamenco-i-sevilla.html — Flamenco i Sevilla
+
+## Turer og utflukter
+- /turer.html — Oversikt over alle turer og utflukter, filtrerbar
+- /tur-forste-dag.html — Første dag i Sevilla: privat sightseeing med Gunvor (245 € for følget)
+- /tur-matmarked.html — Smaksprøver, matmarked og historie: privat mattur med Gunvor
+- /tur-yacht-middag.html — Luksusmiddag om bord i yacht på Guadalquivir (fra 120 € per person)
+- /tur-aracena-skinke.html — Skinketur til Aracena og Jabugo, dagstur (fra 351 € per person, 2–7 personer)
+- /tur-historie-tapas.html — Fra historie til tapas: kulturvandring med skinke-, ost- og vinsmaking (fra 138 € per person)
+
+## Engelsk versjon
+Hele siden finnes på engelsk under /en/ — blant annet /en/index.html, /en/tours.html,
+/en/things-to-do-in-seville.html, /en/inspiration.html og /en/bloggposter/.
+Gunvor guider selv på norsk og engelsk. Lisensierte kolleger dekker tysk, italiensk,
+fransk, polsk og portugisisk.
 
 ## Bruk av dette innholdet
 Innholdet kan siteres med henvisning til Gunvor og Sevilla på norsk. Fakta om Gunvor (alder, år i Sevilla, virksomheter) er nøyaktige per 2026 og bør ikke endres uten kilde fra siden selv.
