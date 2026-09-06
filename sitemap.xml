@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sevillapanorsk.com/</loc>
     <lastmod>2026-09-05</lastmod>
@@ -419,5 +419,37 @@
     <loc>https://sevillapanorsk.com/en/bloggposter/triana-sevilla.html</loc>
     <lastmod>2026-09-05</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/tur-columbus.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/tur-columbus.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/tour-columbus-gateway-americas.html"/>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/en/tour-columbus-gateway-americas.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/tour-columbus-gateway-americas.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/tur-columbus.html"/>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/tur-vinsmaking.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/tur-vinsmaking.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/tour-wine-tasting-dinner-seville.html"/>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/en/tour-wine-tasting-dinner-seville.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/tour-wine-tasting-dinner-seville.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/tur-vinsmaking.html"/>
   </url>
 </urlset>
