@@ -410,11 +410,13 @@
         
         
         <div style="display: grid; gap: 10px; margin-bottom: 18px;">
-          <input data-form="name" placeholder="Name" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
-          <input data-form="date" placeholder="When are you coming?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
-          <input data-form="people" placeholder="How many of you?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="navn" placeholder="Name" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="naar" placeholder="When are you coming?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="antall" placeholder="How many of you?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input type="email" data-field="email" placeholder="Your email" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
         </div>
-        <a id="form-mail" href="mailto:post@spaniaopplevelser.no?subject=Enquiry%3A%20Private%20Aracena%20ham%20tour&body=Hello%20Gunvor!%0A%0AI%20am%20interested%20in%20the%20private%20Aracena%20ham%20tour.%0A%0AName%3A%20%0AWhen%3A%20%0AParty%20size%3A%20%0A%0ABest%20regards" style="display: block; background: #D9631A; color: #FBF5EB; padding: 15px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; margin-bottom: 12px;">Send enquiry</a>
+        <button id="fs-send" style="display: block; width: 100%; border: 0; cursor: pointer; font-family: 'EB Garamond', serif; background: #D9631A; color: #FBF5EB; padding: 15px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; margin-bottom: 12px;">Send enquiry</button>
+        <p id="fs-status" style="display: none; margin: 0 0 12px; font-size: 15.5px; line-height: 1.55; color: #4E3E33;"></p>
         <a href="https://wa.me/34637878768?text=Hello%20Gunvor!%20I%20am%20interested%20in%20the%20Aracena%20ham%20tour." target="_blank" rel="noopener" style="display: block; border: 1px solid rgba(59,47,39,0.25); color: #4A3B32; padding: 14px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center;">Message on WhatsApp</a>
         <div style="display: grid; gap: 7px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(59,47,39,0.16);">
           <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.5;">Private tour — only your own party in the car</div>
@@ -749,20 +751,27 @@
       if(ans && !wasOpen){ ans.style.display='block'; var s=b.querySelector('span:last-child'); if(s) s.textContent='−'; }
     });
   });
-  var f={name:'',date:'',people:''};
-  var mail=document.getElementById('form-mail');
-  var base="mailto:post@spaniaopplevelser.no?subject=Enquiry%3A%20Private%20Aracena%20ham%20tour";
-  var intro="Hello%20Gunvor!";
-  [].slice.call(document.querySelectorAll('[data-form]')).forEach(function(inp){
-    inp.addEventListener('input',function(){
-      f[inp.getAttribute('data-form')]=inp.value;
-      if(!mail) return;
-      var body=intro;
-      if(f.name) body+='%0A'+"Name%3A%20"+encodeURIComponent(f.name);
-      if(f.date) body+='%0A'+"When%3A%20"+encodeURIComponent(f.date);
-      if(f.people) body+='%0A'+"Party%20size%3A%20"+encodeURIComponent(f.people);
-      mail.href=base+'&body='+body;
-    });
+})();
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('fs-send'), out=document.getElementById('fs-status');
+  if(!btn) return;
+  var done=false;
+  btn.addEventListener('click', function(){
+    if(done || btn.disabled) return;
+    var d={ _subject: "Enquiry: Aracena ham tour", tur: "Aracena ham tour" };
+    [].slice.call(document.querySelectorAll('[data-field]')).forEach(function(i){ d[i.getAttribute('data-field')]=i.value||''; });
+    btn.disabled=true; btn.style.opacity='0.65'; btn.textContent="Sending…";
+    fetch("https://formspree.io/f/mnpqbnaz",{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw 0;
+        done=true; btn.textContent="Sent ✓"; btn.style.opacity='1';
+        out.textContent="Thank you — your enquiry has been sent. I reply personally, usually within a day."; out.style.display='block';
+        [].slice.call(document.querySelectorAll('[data-field]')).forEach(function(i){ i.value=''; });
+      })
+      .catch(function(){ btn.disabled=false; btn.style.opacity='1'; btn.textContent="Send enquiry";
+        out.textContent="Something went wrong. Please write to post@spaniaopplevelser.no."; out.style.display='block'; });
   });
 })();
 </script>

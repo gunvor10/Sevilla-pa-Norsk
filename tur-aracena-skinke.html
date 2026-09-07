@@ -58,7 +58,8 @@
     .tour-aside > figure, .tour-aside-portrait, .tour-aside-note { display: none; }
   }
 </style>
-<script src="nav-dropdown.js"></script>
+
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -410,11 +411,13 @@
         
         
         <div style="display: grid; gap: 10px; margin-bottom: 18px;">
-          <input data-form="name" placeholder="Navn" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
-          <input data-form="date" placeholder="Når kommer dere?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
-          <input data-form="people" placeholder="Hvor mange er dere?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="navn" placeholder="Navn" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="naar" placeholder="Når kommer dere?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input data-field="antall" placeholder="Hvor mange er dere?" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
+          <input type="email" data-field="email" placeholder="Din e-post" style="font-family: 'EB Garamond', serif; font-size: 16px; padding: 11px 13px; border: 1px solid rgba(59,47,39,0.22); border-radius: 4px; background: #FBF5EB; color: #3B2F27; width: 100%;">
         </div>
-        <a id="form-mail" href="mailto:post@spaniaopplevelser.no?subject=Foresp%C3%B8rsel%3A%20Skinketur%20til%20Aracena&body=Hei%20Gunvor!%0A%0AJeg%20er%20interessert%20i%20skinketuren%20til%20Aracena%20og%20Jabugo.%0A%0ANavn%3A%20%0AN%C3%A5r%3A%20%0AAntall%3A%20%0A%0AHilsen" style="display: block; background: #D9631A; color: #FBF5EB; padding: 15px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; margin-bottom: 12px;">Send forespørsel</a>
+        <button id="fs-send" style="display: block; width: 100%; border: 0; cursor: pointer; font-family: 'EB Garamond', serif; background: #D9631A; color: #FBF5EB; padding: 15px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center; margin-bottom: 12px;">Send forespørsel</button>
+        <p id="fs-status" style="display: none; margin: 0 0 12px; font-size: 15.5px; line-height: 1.55; color: #4E3E33;"></p>
         <a href="https://wa.me/34637878768?text=Hei%20Gunvor!%20Jeg%20er%20interessert%20i%20skinketuren%20til%20Aracena." target="_blank" rel="noopener" style="display: block; border: 1px solid rgba(59,47,39,0.25); color: #4A3B32; padding: 14px 24px; border-radius: 4px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; text-align: center;">Skriv på WhatsApp</a>
         <div style="display: grid; gap: 7px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(59,47,39,0.16);">
           <div style="font-size: 15.5px; color: #6B5A4C; line-height: 1.5;">Privat tur — bare deres eget følge i bilen</div>
@@ -749,20 +752,26 @@
       if(ans && !wasOpen){ ans.style.display='block'; var s=b.querySelector('span:last-child'); if(s) s.textContent='−'; }
     });
   });
-  var f={name:'',date:'',people:''};
-  var mail=document.getElementById('form-mail');
-  var base="mailto:post@spaniaopplevelser.no?subject=Foresp%C3%B8rsel%3A%20Skinketur%20til%20Aracena";
-  var intro="Hei%20Gunvor!";
-  [].slice.call(document.querySelectorAll('[data-form]')).forEach(function(inp){
-    inp.addEventListener('input',function(){
-      f[inp.getAttribute('data-form')]=inp.value;
-      if(!mail) return;
-      var body=intro;
-      if(f.name) body+='%0A'+"Navn%3A%20"+encodeURIComponent(f.name);
-      if(f.date) body+='%0A'+"N%C3%A5r%3A%20"+encodeURIComponent(f.date);
-      if(f.people) body+='%0A'+"Antall%3A%20"+encodeURIComponent(f.people);
-      mail.href=base+'&body='+body;
-    });
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('fs-send'), out=document.getElementById('fs-status');
+  if(!btn) return;
+  var done=false;
+  btn.addEventListener('click', function(){
+    if(done || btn.disabled) return;
+    var d={ _subject: "Forespørsel: Skinketur til Aracena", tur: "Skinketur til Aracena" };
+    [].slice.call(document.querySelectorAll('[data-field]')).forEach(function(i){ d[i.getAttribute('data-field')]=i.value||''; });
+    btn.disabled=true; btn.style.opacity='0.65'; btn.textContent="Sender…";
+    fetch("https://formspree.io/f/mnpqbnaz",{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){ if(!r.ok) throw 0;
+        done=true; btn.textContent="Sendt ✓"; btn.style.opacity='1';
+        out.textContent="Takk — forespørselen er sendt. Jeg svarer personlig, vanligvis innen en dag."; out.style.display='block';
+        [].slice.call(document.querySelectorAll('[data-field]')).forEach(function(i){ i.value=''; });
+      })
+      .catch(function(){ btn.disabled=false; btn.style.opacity='1'; btn.textContent="Send forespørsel";
+        out.textContent="Noe gikk galt. Skriv gjerne til post@spaniaopplevelser.no."; out.style.display='block'; });
   });
 })();
 </script>
