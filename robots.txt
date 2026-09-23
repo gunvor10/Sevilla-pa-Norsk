@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gunvor10.github.io/Sevilla-pa-Norsk/sitemap.xml
+Sitemap: https://sevillapanorsk.com/sitemap.xml
