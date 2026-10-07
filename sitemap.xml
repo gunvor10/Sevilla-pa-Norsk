@@ -281,11 +281,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sevillapanorsk.com/bloggposter/tapasbarer-i-sevilla.html</loc>
-    <lastmod>2026-09-05</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://sevillapanorsk.com/bloggposter/triana-sevilla.html</loc>
     <lastmod>2026-09-05</lastmod>
     <priority>0.7</priority>
@@ -411,11 +406,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sevillapanorsk.com/en/bloggposter/tapas-bars-in-seville.html</loc>
-    <lastmod>2026-09-05</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://sevillapanorsk.com/en/bloggposter/triana-seville.html</loc>
     <lastmod>2026-09-05</lastmod>
     <priority>0.7</priority>
@@ -481,5 +471,23 @@
     <loc>https://sevillapanorsk.com/en/bloggposter/autumn-in-seville.html</loc>
     <lastmod>2026-09-21</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/en/tour-history-and-tapas-seville.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/tur-historie-tapas.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/tur-olivenolje.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/en/tour-olive-oil-estate-seville.html</loc>
   </url>
 </urlset>
