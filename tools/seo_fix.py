@@ -134,15 +134,15 @@ def move_body_head_block(s):
     head, rest = split_head(s)
     if "<title>" in head:
         return s, False
-    b = rest.find("<body>")
-    if b < 0:
+    bm = re.search(r"<body\b[^>]*>", rest)  # newer exports add attributes, e.g. <body data-restyled="1">
+    if not bm:
         return s, False
-    after = rest[b + len("<body>"):]
+    after = rest[bm.end():]
     m = re.search(r"<(div|header|nav|main|section|article|a)\b", after)
     block = after[: m.start()] if m else ""
     if "<title>" not in block:
         return s, False
-    return head + block.rstrip() + "\n" + rest[: b + len("<body>")] + "\n" + after[m.start():], True
+    return head + block.rstrip() + "\n" + rest[: bm.end()] + "\n" + after[m.start():], True
 
 
 def add_to_head(s, tags):
@@ -215,6 +215,9 @@ def process(root):
         s, moved = move_body_head_block(s)
         if moved:
             changes.append("head tags moved")
+        s, n = re.subn(r'(<img src="[^"]*uploads/logo-hvit\.png") alt=""', r'\1 alt="Sevilla på norsk"', s)
+        if n:
+            changes.append("logo alt")
         if not re.search(r"<html\s+lang=", s):
             s = s.replace("<html>", f'<html lang="{lang}">', 1)
             changes.append("lang")
