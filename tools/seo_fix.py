@@ -105,16 +105,29 @@ def fix_image_refs(s, root):
     files = set(os.listdir(os.path.join(root, "uploads")))
 
     def repl(m):
-        path = m.group(2)
+        path = m.group(1)
         name = urllib.parse.unquote(path)
         if name in files:
             return m.group(0)
         stem = os.path.splitext(name)[0]
-        for ext in IMG_EXT:
-            if stem + ext in files:
-                return m.group(1) + urllib.parse.quote(stem + ext) + m.group(3)
+        # x.png -> x.jpg, or x.jpg -> x.jpg.avif (Design keeps the original name + new extension)
+        for new in [stem + ext for ext in IMG_EXT] + [name + ext for ext in IMG_EXT]:
+            if new in files:
+                return "uploads/" + (urllib.parse.quote(new) if "%" in path else new)
         return m.group(0)
-    return re.sub(r'((?:src|href|content)="[^"]*?uploads/)([^"/]+)(")', repl, s)
+    # any syntax: src/href/content attributes, CSS url(...), gallery data in scripts
+    return re.sub(r"""uploads/([^"'()<>\\/]+?\.(?:png|jpe?g|webp|avif))(?![\w.])""", repl, s, flags=re.I)
+
+
+def fix_en_tour_links(s, rel, pairs):
+    """Design sometimes links English pages to 'tur-x-EN.html' (does not exist): use the real English page."""
+    def repl(m):
+        g = pairs.get(SITE + m.group(2) + ".html")
+        if not g:
+            return m.group(0)
+        target = g["en"][len(SITE):]
+        return 'href="' + os.path.relpath(target, os.path.dirname(rel) or ".").replace(os.sep, "/") + '"'
+    return re.sub(r'href="((?:\.\./)*)([\w-]+)-EN(?:\.dc)?\.html"', repl, s)
 
 
 def lazy_images(s):
@@ -281,7 +294,7 @@ def process(root):
         if rel.replace(os.sep, "/") in overrides:
             s = apply_overrides(s, overrides[rel.replace(os.sep, "/")])
             changes.append("title/description shortened")
-        fixed_refs = fix_image_refs(s, root)
+        fixed_refs = fix_en_tour_links(fix_image_refs(s, root), rel, pairs)
         if fixed_refs != s:
             s = fixed_refs
             changes.append("image links fixed")
