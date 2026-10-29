@@ -9,7 +9,12 @@ Run on the site folder after every new Design download (the export replaces all 
      SLU, licence, address, sister brands) and Gunvor as Person, referenced by @id from every
      Article / TouristTrip; Article/WebPage schema on pages that had none;
   4. sitemap.xml: add indexable pages that are missing;
-  5. llms.txt: rewritten from the pages themselves (always complete) + business facts.
+  5. llms.txt: rewritten from the pages themselves (always complete) + business facts;
+  6. shorter <title>/description from tools/seo_overrides.json (Google cuts ~60 / ~160 chars);
+  7. image links to a missing file are pointed at the same image with another extension
+     (Design sometimes writes .png for an uploaded .jpg); images below the first get lazy loading.
+
+Run tools/optimize_images.py before this script (it shrinks heavy photos, PNG photos -> JPG).
 
 Redirect pages ("Moved") and noindex pages are left alone. Pages already processed (marker
 comment) are skipped, so running it twice is safe.
@@ -21,6 +26,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 
 SITE = "https://sevillapanorsk.com/"
 MARKER = "<!-- seo-fix: tools/seo_fix.py -->"
@@ -72,6 +78,59 @@ REF_ORG = {"@type": "TravelAgency", "@id": ORG_ID, "name": "Spaniaopplevelser", 
 REF_PERSON = {"@type": "Person", "@id": PERSON_ID, "name": "Gunvor Guttormsen"}
 
 LD_RE = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.S)
+IMG_EXT = (".jpg", ".jpeg", ".JPG", ".JPEG", ".png", ".PNG", ".webp", ".avif")
+
+
+def load_overrides(root):
+    p = os.path.join(root, "tools", "seo_overrides.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
+def apply_overrides(s, o):
+    """Replace title/description (and their og:/twitter: copies) with the shorter versions."""
+    if "title" in o:
+        t = esc(o["title"])
+        s = re.sub(r"<title>.*?</title>", lambda m: f"<title>{t}</title>", s, count=1, flags=re.S)
+        og = esc(o["title"].split(" | ")[0])
+        s = re.sub(r'(<meta (?:property="og:title"|name="twitter:title") content=")[^"]*"', lambda m: m.group(1) + og + '"', s)
+    if "description" in o:
+        d = esc(o["description"])
+        s = re.sub(r'(<meta (?:name="description"|property="og:description"|name="twitter:description") content=")[^"]*"',
+                   lambda m: m.group(1) + d + '"', s)
+    return s
+
+
+def fix_image_refs(s, root):
+    """uploads/x.png -> uploads/x.jpg when only the .jpg exists (and the other way round)."""
+    files = set(os.listdir(os.path.join(root, "uploads")))
+
+    def repl(m):
+        path = m.group(2)
+        name = urllib.parse.unquote(path)
+        if name in files:
+            return m.group(0)
+        stem = os.path.splitext(name)[0]
+        for ext in IMG_EXT:
+            if stem + ext in files:
+                return m.group(1) + urllib.parse.quote(stem + ext) + m.group(3)
+        return m.group(0)
+    return re.sub(r'((?:src|href|content)="[^"]*?uploads/)([^"/]+)(")', repl, s)
+
+
+def lazy_images(s):
+    """Lazy-load every content image except the first (the hero); logos stay eager."""
+    head, body = split_head(s)
+    seen = [0]
+
+    def repl(m):
+        tag = m.group(0)
+        if "logo" in tag or "favicon" in tag or "loading=" in tag:
+            return tag
+        seen[0] += 1
+        if seen[0] == 1:
+            return tag
+        return tag[:-1].rstrip("/").rstrip() + ' loading="lazy" decoding="async">'
+    return head + re.sub(r"<img\b[^>]*>", repl, body)
 
 
 def url_of(rel):
@@ -202,6 +261,7 @@ def fix_ld_object(o, lang):
 def process(root):
     pages = load(root)
     pairs = language_pairs(pages)
+    overrides = load_overrides(root)
     report = {"processed": [], "skipped": [], "no_language_pair": [], "sitemap_added": []}
     for rel in sorted(pages):
         s = pages[rel]
@@ -218,6 +278,14 @@ def process(root):
         s, n = re.subn(r'(<img src="[^"]*uploads/logo-hvit\.png") alt=""', r'\1 alt="Sevilla på norsk"', s)
         if n:
             changes.append("logo alt")
+        if rel.replace(os.sep, "/") in overrides:
+            s = apply_overrides(s, overrides[rel.replace(os.sep, "/")])
+            changes.append("title/description shortened")
+        fixed_refs = fix_image_refs(s, root)
+        if fixed_refs != s:
+            s = fixed_refs
+            changes.append("image links fixed")
+        s = lazy_images(s)
         if not re.search(r"<html\s+lang=", s):
             s = s.replace("<html>", f'<html lang="{lang}">', 1)
             changes.append("lang")
