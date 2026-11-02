@@ -2,12 +2,7 @@
 <html lang="en">
 <head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EGLLCQ1Z61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EGLLCQ1Z61');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var c=null;try{c=localStorage.getItem('spn-consent');}catch(e){}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c==='yes'?'granted':'denied'});gtag('js',new Date());gtag('config','G-EGLLCQ1Z61');</script>
 
 <meta charset="utf-8">
 <meta http-equiv="refresh" content="0; url=things-to-do-in-seville.html">
@@ -20,5 +15,18 @@
 <a href="https://wa.me/34637878768" target="_blank" rel="noopener" aria-label="WhatsApp" style="position:fixed;bottom:22px;right:22px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.25);z-index:9999;">
 <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff"><path d="M16.001 3C9.383 3 4 8.373 4 14.98c0 2.55.792 4.92 2.15 6.876L4.6 27l5.32-1.516A12.86 12.86 0 0016 27.02C22.617 27.02 28 21.646 28 15.04 28 8.373 22.617 3 16.001 3zm0 22.16a10.1 10.1 0 01-5.303-1.484l-.38-.226-3.155.9.926-3.06-.246-.394A10.02 10.02 0 015.94 14.98c0-5.554 4.53-10.07 10.06-10.07 5.552 0 10.06 4.516 10.06 10.07 0 5.553-4.508 10.18-10.06 10.18zm5.51-7.55c-.302-.15-1.784-.878-2.06-.978-.276-.1-.478-.15-.68.15-.2.3-.78.978-.955 1.178-.176.2-.352.226-.653.075-.302-.15-1.274-.47-2.428-1.5-.897-.8-1.503-1.79-1.68-2.093-.176-.302-.02-.465.13-.615.15-.15.352-.39.528-.585.176-.196.234-.334.35-.556.117-.222.058-.4-.04-.556-.1-.15-.63-1.518-.864-2.08-.23-.556-.464-.48-.638-.487l-.542-.01c-.176 0-.463.065-.71.315-.245.25-.936.916-.936 2.234s.96 2.596 1.093 2.776c.132.18 1.826 2.79 4.43 3.802 2.605 1.01 2.605.674 3.075.63.47-.044 1.784-.73 2.033-1.44.25-.71.25-1.317.176-1.44-.076-.126-.29-.2-.59-.35z"/></svg>
 </a>
+<!-- analytics-consent (tools/analytics_consent.py) -->
+<div id="spn-consent" hidden role="dialog" aria-label="Cookies" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#23401F;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.5;padding:16px 18px;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)">
+We use Google Analytics cookies to see how visitors use our website. Do you accept statistics cookies?
+<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap"><button type="button" data-v="yes" style="cursor:pointer;border:1px solid #D9631A;background:#D9631A;color:#fff;font-weight:600;padding:8px 16px;border-radius:3px;font-family:inherit">Accept</button><button type="button" data-v="no" style="cursor:pointer;border:1px solid #FFFFFF;background:transparent;color:#FFFFFF;font-weight:600;padding:8px 16px;border-radius:3px;font-family:inherit">Decline</button></div></div>
+<script>
+(function(){var b=document.getElementById('spn-consent'),v=null;try{v=localStorage.getItem('spn-consent');}catch(e){}
+if(!v)b.hidden=false;
+b.addEventListener('click',function(e){var x=e.target.getAttribute('data-v');if(!x)return;try{localStorage.setItem('spn-consent',x);}catch(e){}
+if(x==='yes')gtag('consent','update',{analytics_storage:'granted'});b.hidden=true;});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cookie-settings]');if(!a)return;e.preventDefault();
+try{localStorage.removeItem('spn-consent');}catch(x){}gtag('consent','update',{analytics_storage:'denied'});
+document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ga')===0||n.indexOf('_gid')===0||n.indexOf('_gat')===0){document.cookie=n+'=;Max-Age=0;path=/';document.cookie=n+'=;Max-Age=0;path=/;domain=.sevillapanorsk.com';}});b.hidden=false;});})();
+</script>
 </body>
 </html>

@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="no"><head>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EGLLCQ1Z61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EGLLCQ1Z61');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var c=null;try{c=localStorage.getItem('spn-consent');}catch(e){}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:c==='yes'?'granted':'denied'});gtag('js',new Date());gtag('config','G-EGLLCQ1Z61');</script>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -193,4 +188,17 @@ document.querySelectorAll('section').forEach(function(sec){sec.querySelectorAll(
 sec.querySelectorAll('img').forEach(function(im,i){if(im.closest('[data-rv]'))return;if(im.parentElement)im.parentElement.style.overflow='hidden';prep(im,150+i*120,'img')})});
 function chk(){var vh=window.innerHeight||800;T=T.filter(function(e){var r=e.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0){e.style.opacity='1';e.style.transform='none';return false}return true});if(!T.length){removeEventListener('scroll',chk);clearInterval(iv)}}
 addEventListener('scroll',chk,{passive:true});addEventListener('resize',chk);var iv=setInterval(chk,400);requestAnimationFrame(chk)})();</script>
+<!-- analytics-consent (tools/analytics_consent.py) -->
+<div id="spn-consent" hidden role="dialog" aria-label="Cookies" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;background:#23401F;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;font-size:16px;line-height:1.5;padding:16px 18px;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.25)">
+Vi bruker Google Analytics-informasjonskapsler for å se hvordan nettstedet brukes. Godtar du statistikk-informasjonskapsler?
+<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap"><button type="button" data-v="yes" style="cursor:pointer;border:1px solid #D9631A;background:#D9631A;color:#fff;font-weight:600;padding:8px 16px;border-radius:3px;font-family:inherit">Godta</button><button type="button" data-v="no" style="cursor:pointer;border:1px solid #FFFFFF;background:transparent;color:#FFFFFF;font-weight:600;padding:8px 16px;border-radius:3px;font-family:inherit">Avslå</button></div></div>
+<script>
+(function(){var b=document.getElementById('spn-consent'),v=null;try{v=localStorage.getItem('spn-consent');}catch(e){}
+if(!v)b.hidden=false;
+b.addEventListener('click',function(e){var x=e.target.getAttribute('data-v');if(!x)return;try{localStorage.setItem('spn-consent',x);}catch(e){}
+if(x==='yes')gtag('consent','update',{analytics_storage:'granted'});b.hidden=true;});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-cookie-settings]');if(!a)return;e.preventDefault();
+try{localStorage.removeItem('spn-consent');}catch(x){}gtag('consent','update',{analytics_storage:'denied'});
+document.cookie.split(';').forEach(function(c){var n=c.split('=')[0].trim();if(n.indexOf('_ga')===0||n.indexOf('_gid')===0||n.indexOf('_gat')===0){document.cookie=n+'=;Max-Age=0;path=/';document.cookie=n+'=;Max-Age=0;path=/;domain=.sevillapanorsk.com';}});b.hidden=false;});})();
+</script>
 </body></html>
