@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sevillapanorsk.com/</loc>
     <lastmod>2026-10-29</lastmod>
@@ -510,5 +510,8 @@
     <loc>https://sevillapanorsk.com/bloggposter/jul-i-sevilla.html</loc>
     <lastmod>2026-11-08</lastmod>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sevillapanorsk.com/uploads/candlelight-julekonsert-palass-sevilla.jpg</image:loc>
+    </image:image>
   </url>
 </urlset>
