@@ -492,4 +492,18 @@
     <lastmod>2026-10-29</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://sevillapanorsk.com/bloggposter/sevilla-og-norge-historie.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/bloggposter/sevilla-og-norge-historie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/bloggposter/seville-and-norway-history.html"/>
+  </url>
+  <url>
+    <loc>https://sevillapanorsk.com/en/bloggposter/seville-and-norway-history.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sevillapanorsk.com/en/bloggposter/seville-and-norway-history.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://sevillapanorsk.com/bloggposter/sevilla-og-norge-historie.html"/>
+  </url>
 </urlset>
